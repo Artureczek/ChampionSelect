@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.solodive.championselect",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.3.4",
+    "applicationType": "monolith",
+    "baseName": "ChampionSelect",
+    "packageName": "com.solodive.championselect",
+    "packageFolder": "com/solodive/championselect",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "oracle",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ODM4N2VmZjU4MDc2M2NjNGE5NWU2Mjk4YzEwMWY2MWEzNTI0NzdmZWY2MGE0Mzk4ZDAxMjJmZGU4ZDFhZTY1YjdkNTBlODZkNjJmNDM5ZjRlNTJiYWYzMjRhNTdmYjQ1NTEzMmUwNjAzMWE3ZTE5NmY2ZTM1MDliNzRkYWVlNTA=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "pl"
+    ]
+  }
+}
