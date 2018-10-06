@@ -1,0 +1,4 @@
+entity Champion {
+    name String,
+    lane String,
+}
