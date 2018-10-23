@@ -6,8 +6,16 @@ Main page styles
     display: inline-block;
     width: 347px;
     height: 497px;
-    background: url('../../content/images/hipster.png') no-repeat center top;
+    background: url('../../content/images/xayah.png') no-repeat center top;
     background-size: contain;
+}
+
+a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */

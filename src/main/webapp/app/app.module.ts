@@ -19,7 +19,8 @@ import { ChampionSelectAccountModule } from './account/account.module';
 import { ChampionSelectEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { JhiMainComponent, NavbarComponent, FooterComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { ChoiceCardComponent } from './components/choice-card/choice-card.component';
 
 @NgModule({
     imports: [
@@ -33,7 +34,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         ChampionSelectEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, ActiveMenuDirective, FooterComponent, ChoiceCardComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

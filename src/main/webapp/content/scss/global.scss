@@ -4,12 +4,20 @@
 Bootstrap tweaks
 ===============================================================*/
 
-body,
 h1,
 h2,
 h3,
 h4 {
     font-weight: 300;
+}
+
+body {
+    font-weight: 300;
+    background: url('../../content/images/background3.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 a {
@@ -47,12 +55,6 @@ Generic styles
 }
 
 /* other generic styles */
-
-.jh-card {
-    padding: 1.5%;
-    margin-top: 20px;
-    border: none;
-}
 
 .error {
     color: white;
