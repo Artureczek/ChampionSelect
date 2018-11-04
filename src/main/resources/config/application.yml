@@ -101,6 +101,12 @@ jhipster:
 logging:
     file: target/ChampionSelect.log
 
+ftp:
+    server: localhost
+    port: 8888
+    user: user
+    password: password
+
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
