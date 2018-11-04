@@ -102,10 +102,10 @@ logging:
     file: target/ChampionSelect.log
 
 ftp:
-    server: localhost
-    port: 8888
-    user: user
-    password: password
+    server: 90.130.70.73
+    port: 21
+    user: anonymous
+    password: anonymous
 
 # ===================================================================
 # Application specific properties

@@ -2,12 +2,48 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-    display: inline-block;
-    width: 347px;
-    height: 497px;
-    background: url('../../content/images/xayah.png') no-repeat center top;
-    background-size: contain;
+.column {
+    float: left;
+    text-align: center;
+    color: white;
+    width: 50%;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.font {
+    font-family: Cormorant, Times, serif;
+    font-size: 29px;
+    font-weight: bold;
+    color: #ffe4b2;
+}
+
+.font-big {
+    font-family: Cormorant, Times, serif;
+    font-size: 106px;
+    font-weight: medium;
+    color: #c8a971;
+}
+
+.bottom-left {
+    position: absolute;
+    left: 373px;
+    bottom: 458px;
+}
+.bottom-right {
+    position: absolute;
+    bottom: 458px;
+    right: 360px;
+}
+.top-right {
+    position: absolute;
+    top: 459px;
+    right: 280px;
 }
 
 a {
@@ -18,14 +54,17 @@ a {
     width: 100%;
 }
 
-/* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
     only screen and (-moz-min-device-pixel-ratio: 2),
     only screen and (-o-min-device-pixel-ratio: 2/1),
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    .hipster {
-        background: url('../../content/images/hipster2x.png') no-repeat center top;
-        background-size: contain;
+    .champions {
+        background-image: url('../../content/images/kayn-bg.png');
+        background-position: center;
+    }
+    .members {
+        background-image: url('../../content/images/sd-bg.png');
+        background-position: center;
     }
 }
