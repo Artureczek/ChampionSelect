@@ -44,14 +44,22 @@ Main page styles
 
 .top-right {
     position: absolute;
-    top: 500px;
-    right: 280px;
+    top: 300px;
+    right: 220px;
 }
 
-.top-right {
+.top-left {
     position: absolute;
-    top: 400px;
-    left: 373px;
+    top: 200px;
+    left: 233px;
+}
+
+.circle {
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    background-color: #ffe4b2;
+    border-radius: 50%;
 }
 
 a {
