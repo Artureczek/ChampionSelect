@@ -77,6 +77,9 @@ public class UserService {
     }
 
     public Optional<User> requestPasswordReset(String mail) {
+
+        String someString = "someString2";
+
         return userRepository.findOneByEmailIgnoreCase(mail)
             .filter(User::getActivated)
             .map(user -> {
