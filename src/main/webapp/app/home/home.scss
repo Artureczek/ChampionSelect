@@ -3,6 +3,7 @@ Main page styles
 ========================================================================== */
 
 .column {
+    display: block;
     float: left;
     text-align: center;
     color: white;
@@ -72,14 +73,6 @@ img.bg {
     -webkit-transition: opacity 0.55s ease-in-out;
     transform: scale(1.1);
     transition: transform 1s;
-}
-
-a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
