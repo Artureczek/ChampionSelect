@@ -7,6 +7,7 @@ Main page styles
     text-align: center;
     color: white;
     width: 50%;
+    overflow: hidden;
 }
 
 /* Clear floats after image containers */
@@ -21,6 +22,7 @@ Main page styles
     font-size: 29px;
     font-weight: bold;
     color: #ffe4b2;
+    letter-spacing: 8px;
 }
 
 .font-big {
@@ -31,35 +33,45 @@ Main page styles
 }
 
 .bottom-left {
-    position: absolute;
-    left: 373px;
-    bottom: 458px;
+    position: fixed;
+    left: 19%;
+    bottom: 35%;
 }
 
 .bottom-right {
-    position: absolute;
-    bottom: 458px;
-    right: 360px;
-}
-
-.top-right {
-    position: absolute;
-    top: 300px;
-    right: 220px;
+    position: fixed;
+    bottom: 35%;
+    right: 19%;
 }
 
 .top-left {
-    position: absolute;
-    top: 200px;
-    left: 233px;
+    position: fixed;
+    bottom: 39%;
+    left: 17%;
 }
 
-.circle {
-    position: absolute;
-    height: 44px;
-    width: 44px;
-    background-color: #ffe4b2;
-    border-radius: 50%;
+.top-right {
+    position: fixed;
+    bottom: 39%;
+    right: 13%;
+}
+
+img.bg {
+    width: 100%;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+    transition: transform 1s;
+}
+
+.column:hover img.bg {
+    opacity: 0.95;
+    transition: opacity 0.55s ease-in-out;
+    -moz-transition: opacity 0.55s ease-in-out;
+    -webkit-transition: opacity 0.55s ease-in-out;
+    transform: scale(1.1);
+    transition: transform 1s;
 }
 
 a {
