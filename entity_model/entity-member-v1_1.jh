@@ -1,0 +1,70 @@
+entity SoloMember {
+    name String
+    surname String
+    description String
+    LeagueAccount String
+}
+
+entity Quote {
+    text String
+}
+
+entity LeagueAccount {
+    summonersId Long
+    name String
+    level Integer
+    server Server
+    isMain Boolean
+    division Division
+    tier Tier
+    lp Long
+}
+
+entity Image {
+	widthStart Long,
+    heightStart Long,
+    widthEnd Long,
+    heightEnd Long,
+    group String,
+    sprite String,
+    full String
+}
+
+ entity Champion {
+	id Long,
+    riotId String,
+    riotKey Long,
+    version String,
+    name String,
+    title String,
+    blurb String
+}
+
+relationship OneToMany {
+  SoloMember{quote} to Quote
+  SoloMember{account} to LeagueAccount
+}
+
+relationship ManyToMany{
+    SoloMember {mostPlayed} to Champion {member}
+    SoloMember {member} to SoloMember {partner}
+}
+
+relationship OneToOne {
+ 	SoloMember {image} to Image
+}
+
+enum Server {
+    EUNE, EUW, NA
+}
+
+enum Division {
+    Iron, Bronze, Silver, Gold, Platinum, Diamond, Master, Grandmaster, Challenger
+}
+
+enum Tier {
+    One, Two, Three, Four, Five, NA
+}
+
+service SoloMember, Quote, LeagueAccount, Image, Champion with serviceClass
+paginate SoloMember, Quote, LeagueAccount, Image, Champion with infinite-scroll
