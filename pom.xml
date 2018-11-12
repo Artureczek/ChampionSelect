@@ -230,8 +230,8 @@
         <!-- more information at https://blogs.oracle.com/dev2dev/entry/how_to_get_oracle_jdbc -->
         <dependency>
             <groupId>com.oracle.jdbc</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <version>12.2.0.1</version>
+            <artifactId>ojdbc6</artifactId>
+            <version>12.1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -571,7 +571,10 @@
                     <mainClass>${start-class}</mainClass>
                     <executable>true</executable>
                     <fork>true</fork>
+                    <!--
+                    Enable the line below to have remote debugging of your application on port 5005
                     <jvmArguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005</jvmArguments>
+                    -->
                 </configuration>
             </plugin>
             <plugin>
