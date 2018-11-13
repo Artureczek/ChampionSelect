@@ -9,6 +9,7 @@ Main page styles
     color: white;
     width: 50%;
     overflow: hidden;
+    position: relative;
 }
 
 /* Clear floats after image containers */
@@ -34,27 +35,51 @@ Main page styles
 }
 
 .bottom-left {
-    position: fixed;
-    left: 19%;
-    bottom: 35%;
+    position: absolute;
+    left: 373px;
+    bottom: 458px;
 }
 
-.bottom-right {
-    position: fixed;
-    bottom: 35%;
-    right: 19%;
+.bottom-left-left {
+    position: absolute;
+    left: 36px;
+    bottom: 477px;
+}
+
+.bottom-left-right {
+    position: absolute;
+    left: 633px;
+    bottom: 477px;
 }
 
 .top-left {
-    position: fixed;
-    bottom: 39%;
-    left: 17%;
+    position: absolute;
+    left: 340px;
+    bottom: 490px;
+}
+
+.bottom-right {
+    position: absolute;
+    right: 360px;
+    bottom: 458px;
+}
+
+.bottom-right-left {
+    position: absolute;
+    right: 585px;
+    bottom: 477px;
+}
+
+.bottom-right-right {
+    position: absolute;
+    right: 33px;
+    bottom: 477px;
 }
 
 .top-right {
-    position: fixed;
-    bottom: 39%;
-    right: 13%;
+    position: absolute;
+    right: 255px;
+    bottom: 490px;
 }
 
 img.bg {
