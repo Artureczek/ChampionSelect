@@ -1,40 +1,40 @@
 package com.solodive.championselect.service.dto.riotapi;
 
 public class Stats {
-    private long participantId;
+    private Long participantId;
     private Boolean win;
-    private long kills;
-    private long deaths;
-    private long assists;
-    private long largestKillingSpree;
-    private long largestMultiKill;
-    private long killingSprees;
-    private long longestTimeSpentLiving;
-    private long doubleKills;
-    private long tripleKills;
-    private long quadraKills;
-    private long pentaKills;
-    private long totalDamageDealtToChampions;
-    private long totalHeal;
-    private long visionScore;
-    private long timeCCingOthers;
-    private long totalDamageTaken;
-    private long goldEarned;
-    private long goldSpent;
-    private long turretKills;
-    private long inhibitorKills;
-    private long totalMinionsKilled;
-    private long visionWardsBoughtInGame;
-    private long sightWardsBoughtInGame;
-    private long wardsPlaced;
-    private long wardsKilled;
+    private Long kills;
+    private Long deaths;
+    private Long assists;
+    private Long largestKillingSpree;
+    private Long largestMultiKill;
+    private Long killingSprees;
+    private Long LongestTimeSpentLiving;
+    private Long doubleKills;
+    private Long tripleKills;
+    private Long quadraKills;
+    private Long pentaKills;
+    private Long totalDamageDealtToChampions;
+    private Long totalHeal;
+    private Long visionScore;
+    private Long timeCCingOthers;
+    private Long totalDamageTaken;
+    private Long goldEarned;
+    private Long goldSpent;
+    private Long turretKills;
+    private Long inhibitorKills;
+    private Long totalMinionsKilled;
+    private Long visionWardsBoughtInGame;
+    private Long sightWardsBoughtInGame;
+    private Long wardsPlaced;
+    private Long wardsKilled;
 
 
-    public long getParticipantId() {
+    public Long getParticipantId() {
         return participantId;
     }
 
-    public void setParticipantId(long participantId) {
+    public void setParticipantId(Long participantId) {
         this.participantId = participantId;
     }
 
@@ -46,203 +46,203 @@ public class Stats {
         this.win = win;
     }
 
-    public long getKills() {
+    public Long getKills() {
         return kills;
     }
 
-    public void setKills(long kills) {
+    public void setKills(Long kills) {
         this.kills = kills;
     }
 
-    public long getDeaths() {
+    public Long getDeaths() {
         return deaths;
     }
 
-    public void setDeaths(long deaths) {
+    public void setDeaths(Long deaths) {
         this.deaths = deaths;
     }
 
-    public long getAssists() {
+    public Long getAssists() {
         return assists;
     }
 
-    public void setAssists(long assists) {
+    public void setAssists(Long assists) {
         this.assists = assists;
     }
 
-    public long getLargestKillingSpree() {
+    public Long getLargestKillingSpree() {
         return largestKillingSpree;
     }
 
-    public void setLargestKillingSpree(long largestKillingSpree) {
+    public void setLargestKillingSpree(Long largestKillingSpree) {
         this.largestKillingSpree = largestKillingSpree;
     }
 
-    public long getLargestMultiKill() {
+    public Long getLargestMultiKill() {
         return largestMultiKill;
     }
 
-    public void setLargestMultiKill(long largestMultiKill) {
+    public void setLargestMultiKill(Long largestMultiKill) {
         this.largestMultiKill = largestMultiKill;
     }
 
-    public long getKillingSprees() {
+    public Long getKillingSprees() {
         return killingSprees;
     }
 
-    public void setKillingSprees(long killingSprees) {
+    public void setKillingSprees(Long killingSprees) {
         this.killingSprees = killingSprees;
     }
 
-    public long getLongestTimeSpentLiving() {
-        return longestTimeSpentLiving;
+    public Long getLongestTimeSpentLiving() {
+        return LongestTimeSpentLiving;
     }
 
-    public void setLongestTimeSpentLiving(long longestTimeSpentLiving) {
-        this.longestTimeSpentLiving = longestTimeSpentLiving;
+    public void setLongestTimeSpentLiving(Long LongestTimeSpentLiving) {
+        this.LongestTimeSpentLiving = LongestTimeSpentLiving;
     }
 
-    public long getDoubleKills() {
+    public Long getDoubleKills() {
         return doubleKills;
     }
 
-    public void setDoubleKills(long doubleKills) {
+    public void setDoubleKills(Long doubleKills) {
         this.doubleKills = doubleKills;
     }
 
-    public long getTripleKills() {
+    public Long getTripleKills() {
         return tripleKills;
     }
 
-    public void setTripleKills(long tripleKills) {
+    public void setTripleKills(Long tripleKills) {
         this.tripleKills = tripleKills;
     }
 
-    public long getQuadraKills() {
+    public Long getQuadraKills() {
         return quadraKills;
     }
 
-    public void setQuadraKills(long quadraKills) {
+    public void setQuadraKills(Long quadraKills) {
         this.quadraKills = quadraKills;
     }
 
-    public long getPentaKills() {
+    public Long getPentaKills() {
         return pentaKills;
     }
 
-    public void setPentaKills(long pentaKills) {
+    public void setPentaKills(Long pentaKills) {
         this.pentaKills = pentaKills;
     }
 
-    public long getTotalDamageDealtToChampions() {
+    public Long getTotalDamageDealtToChampions() {
         return totalDamageDealtToChampions;
     }
 
-    public void setTotalDamageDealtToChampions(long totalDamageDealtToChampions) {
+    public void setTotalDamageDealtToChampions(Long totalDamageDealtToChampions) {
         this.totalDamageDealtToChampions = totalDamageDealtToChampions;
     }
 
-    public long getTotalHeal() {
+    public Long getTotalHeal() {
         return totalHeal;
     }
 
-    public void setTotalHeal(long totalHeal) {
+    public void setTotalHeal(Long totalHeal) {
         this.totalHeal = totalHeal;
     }
 
-    public long getVisionScore() {
+    public Long getVisionScore() {
         return visionScore;
     }
 
-    public void setVisionScore(long visionScore) {
+    public void setVisionScore(Long visionScore) {
         this.visionScore = visionScore;
     }
 
-    public long getTimeCCingOthers() {
+    public Long getTimeCCingOthers() {
         return timeCCingOthers;
     }
 
-    public void setTimeCCingOthers(long timeCCingOthers) {
+    public void setTimeCCingOthers(Long timeCCingOthers) {
         this.timeCCingOthers = timeCCingOthers;
     }
 
-    public long getTotalDamageTaken() {
+    public Long getTotalDamageTaken() {
         return totalDamageTaken;
     }
 
-    public void setTotalDamageTaken(long totalDamageTaken) {
+    public void setTotalDamageTaken(Long totalDamageTaken) {
         this.totalDamageTaken = totalDamageTaken;
     }
 
-    public long getGoldEarned() {
+    public Long getGoldEarned() {
         return goldEarned;
     }
 
-    public void setGoldEarned(long goldEarned) {
+    public void setGoldEarned(Long goldEarned) {
         this.goldEarned = goldEarned;
     }
 
-    public long getGoldSpent() {
+    public Long getGoldSpent() {
         return goldSpent;
     }
 
-    public void setGoldSpent(long goldSpent) {
+    public void setGoldSpent(Long goldSpent) {
         this.goldSpent = goldSpent;
     }
 
-    public long getTurretKills() {
+    public Long getTurretKills() {
         return turretKills;
     }
 
-    public void setTurretKills(long turretKills) {
+    public void setTurretKills(Long turretKills) {
         this.turretKills = turretKills;
     }
 
-    public long getInhibitorKills() {
+    public Long getInhibitorKills() {
         return inhibitorKills;
     }
 
-    public void setInhibitorKills(long inhibitorKills) {
+    public void setInhibitorKills(Long inhibitorKills) {
         this.inhibitorKills = inhibitorKills;
     }
 
-    public long getTotalMinionsKilled() {
+    public Long getTotalMinionsKilled() {
         return totalMinionsKilled;
     }
 
-    public void setTotalMinionsKilled(long totalMinionsKilled) {
+    public void setTotalMinionsKilled(Long totalMinionsKilled) {
         this.totalMinionsKilled = totalMinionsKilled;
     }
 
-    public long getVisionWardsBoughtInGame() {
+    public Long getVisionWardsBoughtInGame() {
         return visionWardsBoughtInGame;
     }
 
-    public void setVisionWardsBoughtInGame(long visionWardsBoughtInGame) {
+    public void setVisionWardsBoughtInGame(Long visionWardsBoughtInGame) {
         this.visionWardsBoughtInGame = visionWardsBoughtInGame;
     }
 
-    public long getSightWardsBoughtInGame() {
+    public Long getSightWardsBoughtInGame() {
         return sightWardsBoughtInGame;
     }
 
-    public void setSightWardsBoughtInGame(long sightWardsBoughtInGame) {
+    public void setSightWardsBoughtInGame(Long sightWardsBoughtInGame) {
         this.sightWardsBoughtInGame = sightWardsBoughtInGame;
     }
 
-    public long getWardsPlaced() {
+    public Long getWardsPlaced() {
         return wardsPlaced;
     }
 
-    public void setWardsPlaced(long wardsPlaced) {
+    public void setWardsPlaced(Long wardsPlaced) {
         this.wardsPlaced = wardsPlaced;
     }
 
-    public long getWardsKilled() {
+    public Long getWardsKilled() {
         return wardsKilled;
     }
 
-    public void setWardsKilled(long wardsKilled) {
+    public void setWardsKilled(Long wardsKilled) {
         this.wardsKilled = wardsKilled;
     }
 
@@ -257,7 +257,7 @@ public class Stats {
             ", largestKillingSpree=" + largestKillingSpree +
             ", largestMultiKill=" + largestMultiKill +
             ", killingSprees=" + killingSprees +
-            ", longestTimeSpentLiving=" + longestTimeSpentLiving +
+            ", LongestTimeSpentLiving=" + LongestTimeSpentLiving +
             ", doubleKills=" + doubleKills +
             ", tripleKills=" + tripleKills +
             ", quadraKills=" + quadraKills +

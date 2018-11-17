@@ -1,34 +1,35 @@
 package com.solodive.championselect.service.dto.riotapi;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SummonerMatches {
-    private int totalGames;
-    private int startIndex;
-    private int endIndex;
-    private List<Match> matches;
+    private Long totalGames;
+    private Long startIndex;
+    private Long endIndex;
+    private List<Match> matches = new ArrayList<>();
 
-    public int getTotalGames() {
+    public Long getTotalGames() {
         return totalGames;
     }
 
-    public void setTotalGames(int totalGames) {
+    public void setTotalGames(Long totalGames) {
         this.totalGames = totalGames;
     }
 
-    public int getStartIndex() {
+    public Long getStartIndex() {
         return startIndex;
     }
 
-    public void setStartIndex(int startIndex) {
+    public void setStartIndex(Long startIndex) {
         this.startIndex = startIndex;
     }
 
-    public int getEndIndex() {
+    public Long getEndIndex() {
         return endIndex;
     }
 
-    public void setEndIndex(int endIndex) {
+    public void setEndIndex(Long endIndex) {
         this.endIndex = endIndex;
     }
 

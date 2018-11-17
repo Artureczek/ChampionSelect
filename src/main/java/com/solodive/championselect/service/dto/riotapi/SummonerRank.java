@@ -9,9 +9,9 @@ public class SummonerRank {
     private String rank;
     private String playerOrTeamId;
     private String playerOrTeamName;
-    private long leaguePoints;
-    private long wins;
-    private long losses;
+    private Long leaguePoints;
+    private Long wins;
+    private Long losses;
     private Boolean veteran;
     private Boolean inactive;
     private Boolean freshBlood;
@@ -73,27 +73,27 @@ public class SummonerRank {
         this.playerOrTeamName = playerOrTeamName;
     }
 
-    public long getLeaguePoints() {
+    public Long getLeaguePoLongs() {
         return leaguePoints;
     }
 
-    public void setLeaguePoints(Integer leaguePoints) {
+    public void setLeaguePoLongs(Long leaguePoints) {
         this.leaguePoints = leaguePoints;
     }
 
-    public long getWins() {
+    public Long getWins() {
         return wins;
     }
 
-    public void setWins(Integer wins) {
+    public void setWins(Long wins) {
         this.wins = wins;
     }
 
-    public long getLosses() {
+    public Long getLosses() {
         return losses;
     }
 
-    public void setLosses(Integer losses) {
+    public void setLosses(Long losses) {
         this.losses = losses;
     }
 
@@ -140,7 +140,7 @@ public class SummonerRank {
             ", rank='" + rank + '\'' +
             ", playerOrTeamId='" + playerOrTeamId + '\'' +
             ", playerOrTeamName='" + playerOrTeamName + '\'' +
-            ", leaguePoints=" + leaguePoints +
+            ", leaguePoLongs=" + leaguePoints +
             ", wins=" + wins +
             ", losses=" + losses +
             ", veteran=" + veteran +

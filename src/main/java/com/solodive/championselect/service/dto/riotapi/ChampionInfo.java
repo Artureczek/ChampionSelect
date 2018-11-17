@@ -2,41 +2,41 @@ package com.solodive.championselect.service.dto.riotapi;
 
 public class ChampionInfo {
 
-    private Integer attack;
-    private Integer defense;
-    private Integer magic;
-    private Integer difficulty;
+    private Long attack;
+    private Long defense;
+    private Long magic;
+    private Long difficulty;
 
 
-    public Integer getAttack() {
+    public Long getAttack() {
         return attack;
     }
 
-    public void setAttack(Integer attack) {
+    public void setAttack(Long attack) {
         this.attack = attack;
     }
 
-    public Integer getDefense() {
+    public Long getDefense() {
         return defense;
     }
 
-    public void setDefense(Integer defense) {
+    public void setDefense(Long defense) {
         this.defense = defense;
     }
 
-    public Integer getMagic() {
+    public Long getMagic() {
         return magic;
     }
 
-    public void setMagic(Integer magic) {
+    public void setMagic(Long magic) {
         this.magic = magic;
     }
 
-    public Integer getDifficulty() {
+    public Long getDifficulty() {
         return difficulty;
     }
 
-    public void setDifficulty(Integer difficulty) {
+    public void setDifficulty(Long difficulty) {
         this.difficulty = difficulty;
     }
 

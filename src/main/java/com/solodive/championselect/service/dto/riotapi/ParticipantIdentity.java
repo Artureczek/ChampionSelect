@@ -2,14 +2,14 @@ package com.solodive.championselect.service.dto.riotapi;
 
 public class ParticipantIdentity {
 
-    private long participantId;
+    private Long participantId;
     private Player player;
 
-    public long getParticipantId() {
+    public Long getParticipantId() {
         return participantId;
     }
 
-    public void setParticipantId(long participantId) {
+    public void setParticipantId(Long participantId) {
         this.participantId = participantId;
     }
 

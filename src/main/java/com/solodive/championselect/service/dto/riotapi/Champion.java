@@ -1,5 +1,6 @@
 package com.solodive.championselect.service.dto.riotapi;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Champion {
@@ -12,7 +13,7 @@ public class Champion {
     private String blurb;
     private ChampionInfo info;
     private ChampionImage image;
-    private List<String> tags = null;
+    private List<String> tags = new ArrayList<>();
     private String partype;
     private ChampionStats stats;
 

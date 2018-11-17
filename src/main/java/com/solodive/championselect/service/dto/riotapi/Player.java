@@ -2,13 +2,13 @@ package com.solodive.championselect.service.dto.riotapi;
 
 public class Player {
     private String platformId;
-    private long accountId;
+    private Long accountId;
     private String summonerName;
-    private long summonerId;
+    private Long summonerId;
     private String currentPlatformId;
-    private long currentAccountId;
+    private Long currentAccountId;
     private String matchHistoryUri;
-    private long profileIcon;
+    private Long profileIcon;
 
     public String getPlatformId() {
         return platformId;
@@ -18,11 +18,11 @@ public class Player {
         this.platformId = platformId;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(long accountId) {
+    public void setAccountId(Long accountId) {
         this.accountId = accountId;
     }
 
@@ -34,11 +34,11 @@ public class Player {
         this.summonerName = summonerName;
     }
 
-    public long getSummonerId() {
+    public Long getSummonerId() {
         return summonerId;
     }
 
-    public void setSummonerId(long summonerId) {
+    public void setSummonerId(Long summonerId) {
         this.summonerId = summonerId;
     }
 
@@ -50,11 +50,11 @@ public class Player {
         this.currentPlatformId = currentPlatformId;
     }
 
-    public long getCurrentAccountId() {
+    public Long getCurrentAccountId() {
         return currentAccountId;
     }
 
-    public void setCurrentAccountId(long currentAccountId) {
+    public void setCurrentAccountId(Long currentAccountId) {
         this.currentAccountId = currentAccountId;
     }
 
@@ -66,11 +66,11 @@ public class Player {
         this.matchHistoryUri = matchHistoryUri;
     }
 
-    public long getProfileIcon() {
+    public Long getProfileIcon() {
         return profileIcon;
     }
 
-    public void setProfileIcon(long profileIcon) {
+    public void setProfileIcon(Long profileIcon) {
         this.profileIcon = profileIcon;
     }
 

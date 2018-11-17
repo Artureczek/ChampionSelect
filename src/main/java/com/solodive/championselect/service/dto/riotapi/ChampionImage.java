@@ -5,10 +5,10 @@ public class ChampionImage {
     private String full;
     private String sprite;
     private String group;
-    private Integer x;
-    private Integer y;
-    private Integer w;
-    private Integer h;
+    private Long x;
+    private Long y;
+    private Long w;
+    private Long h;
 
 
     public String getFull() {
@@ -35,35 +35,35 @@ public class ChampionImage {
         this.group = group;
     }
 
-    public Integer getX() {
+    public Long getX() {
         return x;
     }
 
-    public void setX(Integer x) {
+    public void setX(Long x) {
         this.x = x;
     }
 
-    public Integer getY() {
+    public Long getY() {
         return y;
     }
 
-    public void setY(Integer y) {
+    public void setY(Long y) {
         this.y = y;
     }
 
-    public Integer getW() {
+    public Long getW() {
         return w;
     }
 
-    public void setW(Integer w) {
+    public void setW(Long w) {
         this.w = w;
     }
 
-    public Integer getH() {
+    public Long getH() {
         return h;
     }
 
-    public void setH(Integer h) {
+    public void setH(Long h) {
         this.h = h;
     }
 

@@ -2,13 +2,13 @@ package com.solodive.championselect.service.dto.riotapi;
 
 public class Match {
     private String lane;
-    private long gameId;
-    private int champion;
+    private Long gameId;
+    private Long champion;
     private String platformId;
-    private int season;
-    private int queue;
+    private Long season;
+    private Long queue;
     private String role;
-    private long timestamp;
+    private Long timestamp;
 
     public String getLane() {
         return lane;
@@ -18,19 +18,19 @@ public class Match {
         this.lane = lane;
     }
 
-    public long getGameId() {
+    public Long getGameId() {
         return gameId;
     }
 
-    public void setGameId(long gameId) {
+    public void setGameId(Long gameId) {
         this.gameId = gameId;
     }
 
-    public int getChampion() {
+    public Long getChampion() {
         return champion;
     }
 
-    public void setChampion(int champion) {
+    public void setChampion(Long champion) {
         this.champion = champion;
     }
 
@@ -42,19 +42,19 @@ public class Match {
         this.platformId = platformId;
     }
 
-    public int getSeason() {
+    public Long getSeason() {
         return season;
     }
 
-    public void setSeason(int season) {
+    public void setSeason(Long season) {
         this.season = season;
     }
 
-    public int getQueue() {
+    public Long getQueue() {
         return queue;
     }
 
-    public void setQueue(int queue) {
+    public void setQueue(Long queue) {
         this.queue = queue;
     }
 
@@ -66,11 +66,11 @@ public class Match {
         this.role = role;
     }
 
-    public long getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 

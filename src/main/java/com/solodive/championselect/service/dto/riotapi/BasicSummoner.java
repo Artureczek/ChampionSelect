@@ -2,19 +2,19 @@ package com.solodive.championselect.service.dto.riotapi;
 
 public class BasicSummoner {
 
-    private long id;
+    private Long id;
     private String name;
-    private long profileIconId;
-    private long summonerLevel;
-    private long revisionDate;
-    private long accountId;
+    private Long profileIconId;
+    private Long summonerLevel;
+    private Long revisionDate;
+    private Long accountId;
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -26,35 +26,35 @@ public class BasicSummoner {
         this.name = name;
     }
 
-    public long getProfileIconId() {
+    public Long getProfileIconId() {
         return profileIconId;
     }
 
-    public void setProfileIconId(long profileIconId) {
+    public void setProfileIconId(Long profileIconId) {
         this.profileIconId = profileIconId;
     }
 
-    public long getSummonerLevel() {
+    public Long getSummonerLevel() {
         return summonerLevel;
     }
 
-    public void setSummonerLevel(long summonerLevel) {
+    public void setSummonerLevel(Long summonerLevel) {
         this.summonerLevel = summonerLevel;
     }
 
-    public long getRevisionDate() {
+    public Long getRevisionDate() {
         return revisionDate;
     }
 
-    public void setRevisionDate(long revisionDate) {
+    public void setRevisionDate(Long revisionDate) {
         this.revisionDate = revisionDate;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(long accountId) {
+    public void setAccountId(Long accountId) {
         this.accountId = accountId;
     }
 

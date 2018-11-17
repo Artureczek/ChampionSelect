@@ -1,28 +1,28 @@
 package com.solodive.championselect.service.dto.riotapi;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MatchDetails {
-    private long gameId;
+    private Long gameId;
     private String platformId;
-    private long gameCreation;
-    private long gameDuration;
-    private long queueId;
-    private long mapId;
-    private long seasonId;
+    private Long gameCreation;
+    private Long gameDuration;
+    private Long queueId;
+    private Long mapId;
+    private Long seasonId;
     private String gameVersion;
     private String gameMode;
     private String gameType;
-    //private List<Team> teams = null;
-    private List<Participant> participants = null;
-    private List<ParticipantIdentity> participantIdentities = null;
+    private List<Participant> participants = new ArrayList<>();
+    private List<ParticipantIdentity> participantIdentities = new ArrayList<>();
 
 
-    public long getGameId() {
+    public Long getGameId() {
         return gameId;
     }
 
-    public void setGameId(long gameId) {
+    public void setGameId(Long gameId) {
         this.gameId = gameId;
     }
 
@@ -34,43 +34,43 @@ public class MatchDetails {
         this.platformId = platformId;
     }
 
-    public long getGameCreation() {
+    public Long getGameCreation() {
         return gameCreation;
     }
 
-    public void setGameCreation(long gameCreation) {
+    public void setGameCreation(Long gameCreation) {
         this.gameCreation = gameCreation;
     }
 
-    public long getGameDuration() {
+    public Long getGameDuration() {
         return gameDuration;
     }
 
-    public void setGameDuration(long gameDuration) {
+    public void setGameDuration(Long gameDuration) {
         this.gameDuration = gameDuration;
     }
 
-    public long getQueueId() {
+    public Long getQueueId() {
         return queueId;
     }
 
-    public void setQueueId(long queueId) {
+    public void setQueueId(Long queueId) {
         this.queueId = queueId;
     }
 
-    public long getMapId() {
+    public Long getMapId() {
         return mapId;
     }
 
-    public void setMapId(long mapId) {
+    public void setMapId(Long mapId) {
         this.mapId = mapId;
     }
 
-    public long getSeasonId() {
+    public Long getSeasonId() {
         return seasonId;
     }
 
-    public void setSeasonId(long seasonId) {
+    public void setSeasonId(Long seasonId) {
         this.seasonId = seasonId;
     }
 
