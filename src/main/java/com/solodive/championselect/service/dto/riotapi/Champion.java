@@ -1,4 +1,4 @@
-package com.solodive.championselect.service.dto;
+package com.solodive.championselect.service.dto.riotapi;
 
 import java.util.List;
 

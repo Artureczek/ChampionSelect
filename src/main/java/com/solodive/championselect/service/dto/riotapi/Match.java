@@ -1,4 +1,4 @@
-package com.solodive.championselect.service.dto;
+package com.solodive.championselect.service.dto.riotapi;
 
 public class Match {
     private String lane;
