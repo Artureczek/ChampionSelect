@@ -140,7 +140,7 @@ public class SummonerRank {
             ", rank='" + rank + '\'' +
             ", playerOrTeamId='" + playerOrTeamId + '\'' +
             ", playerOrTeamName='" + playerOrTeamName + '\'' +
-            ", leaguePoLongs=" + leaguePoints +
+            ", leaguePoints=" + leaguePoints +
             ", wins=" + wins +
             ", losses=" + losses +
             ", veteran=" + veteran +

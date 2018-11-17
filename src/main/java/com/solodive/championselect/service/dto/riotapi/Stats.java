@@ -9,7 +9,7 @@ public class Stats {
     private Long largestKillingSpree;
     private Long largestMultiKill;
     private Long killingSprees;
-    private Long LongestTimeSpentLiving;
+    private Long longestTimeSpentLiving;
     private Long doubleKills;
     private Long tripleKills;
     private Long quadraKills;
@@ -95,11 +95,11 @@ public class Stats {
     }
 
     public Long getLongestTimeSpentLiving() {
-        return LongestTimeSpentLiving;
+        return longestTimeSpentLiving;
     }
 
     public void setLongestTimeSpentLiving(Long LongestTimeSpentLiving) {
-        this.LongestTimeSpentLiving = LongestTimeSpentLiving;
+        this.longestTimeSpentLiving = LongestTimeSpentLiving;
     }
 
     public Long getDoubleKills() {
@@ -257,7 +257,7 @@ public class Stats {
             ", largestKillingSpree=" + largestKillingSpree +
             ", largestMultiKill=" + largestMultiKill +
             ", killingSprees=" + killingSprees +
-            ", LongestTimeSpentLiving=" + LongestTimeSpentLiving +
+            ", longestTimeSpentLiving=" + longestTimeSpentLiving +
             ", doubleKills=" + doubleKills +
             ", tripleKills=" + tripleKills +
             ", quadraKills=" + quadraKills +
