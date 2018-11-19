@@ -1,6 +1,10 @@
-.jh-card {
-    padding: 1.5%;
-    margin-top: 20px;
-    border: none;
-    background-color: rgba(245, 245, 245, 0.4);
+.parent {
+    width: 100%;
+}
+
+.child {
+    position: fixed;
+    z-index: 100;
+    top: 8%;
+    margin: 0 auto;
 }
