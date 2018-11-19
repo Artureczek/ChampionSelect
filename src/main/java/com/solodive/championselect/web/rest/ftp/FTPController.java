@@ -28,7 +28,7 @@ public class FTPController {
 
     @GetMapping("/files/ftp/{path}/{fileName}")
     public ResponseEntity<byte[]> getSingleFileFromFTP(@PathVariable String path, @PathVariable String fileName) {
-        log.info("Received request for file by name: " + fileName);
+        log.info("Received request for file by name: {}", fileName);
         String pathWithSlashes = UrlUtil.changeUnderscoresToSlashes(path);
         byte[] fileFromFTP;
         try {
