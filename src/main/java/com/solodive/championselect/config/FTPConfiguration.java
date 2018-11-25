@@ -9,8 +9,7 @@ public class FTPConfiguration {
 
     @Bean
     public FTPClient ftpClient(){
-        FTPClient ftpClient = new FTPClient();
-        return ftpClient;
+        return new FTPClient();
     }
 
 }
