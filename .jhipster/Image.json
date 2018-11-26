@@ -1,0 +1,43 @@
+{
+    "name": "Image",
+    "fields": [
+        {
+            "fieldName": "widthStart",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "heightStart",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "widthEnd",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "heightEnd",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "group",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sprite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "full",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181112142332",
+    "entityTableName": "image",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

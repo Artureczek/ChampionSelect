@@ -1,0 +1,54 @@
+{
+    "name": "LeagueAccount",
+    "fields": [
+        {
+            "fieldName": "summonersId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "server",
+            "fieldType": "Server",
+            "fieldValues": "EUNE,EUW,NA"
+        },
+        {
+            "fieldName": "division",
+            "fieldType": "Division",
+            "fieldValues": "Iron,Bronze,Silver,Gold,Platinum,Diamond,Master,Grandmaster,Challenger"
+        },
+        {
+            "fieldName": "tier",
+            "fieldType": "Tier",
+            "fieldValues": "One,Two,Three,Four,Five,NA"
+        },
+        {
+            "fieldName": "lp",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "latest",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "lastUpdate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181112142331",
+    "entityTableName": "league_account",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

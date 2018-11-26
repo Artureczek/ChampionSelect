@@ -1,0 +1,30 @@
+
+{
+    "championSelectApp": {
+        "soloMember" : {
+            "home": {
+                "title": "Solo Member",
+                "createLabel": "Dodaj Solo Member",
+                "createOrEditLabel": "Dodaj lub edytuj: Solo Member"
+            },
+            "created": "Utworzono nowy obiekt typu Solo Member z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Solo Member z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Solo Member z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Solo Member {{ id }}?"
+            },
+            "detail": {
+                "title": "Solo Member"
+            },
+            "name": "Name",
+            "surname": "Surname",
+            "description": "Description",
+            "hometown": "Hometown",
+            "account": "Account",
+            "quote": "Quote",
+            "mostPlayed": "Most Played",
+            "member": "Member",
+            "partner": "Partner"
+        }
+    }
+}

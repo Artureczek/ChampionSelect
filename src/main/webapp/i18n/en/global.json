@@ -7,6 +7,11 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "soloMember": "Solo Member",
+                "quote": "Quote",
+                "leagueAccount": "League Account",
+                "image": "Image",
+                "champion": "Champion",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,30 @@
+
+{
+    "championSelectApp": {
+        "leagueAccount" : {
+            "home": {
+                "title": "League Accounts",
+                "createLabel": "Create a new League Account",
+                "createOrEditLabel": "Create or edit a League Account"
+            },
+            "created": "A new League Account is created with identifier {{ param }}",
+            "updated": "A League Account is updated with identifier {{ param }}",
+            "deleted": "A League Account is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete League Account {{ id }}?"
+            },
+            "detail": {
+                "title": "League Account"
+            },
+            "summonersId": "Summoners Id",
+            "name": "Name",
+            "level": "Level",
+            "server": "Server",
+            "division": "Division",
+            "tier": "Tier",
+            "lp": "Lp",
+            "latest": "Latest",
+            "lastUpdate": "Last Update"
+        }
+    }
+}

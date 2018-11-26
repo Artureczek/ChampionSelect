@@ -1,0 +1,28 @@
+
+{
+    "championSelectApp": {
+        "champion" : {
+            "home": {
+                "title": "Champion",
+                "createLabel": "Dodaj Champion",
+                "createOrEditLabel": "Dodaj lub edytuj: Champion"
+            },
+            "created": "Utworzono nowy obiekt typu Champion z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Champion z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Champion z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Champion {{ id }}?"
+            },
+            "detail": {
+                "title": "Champion"
+            },
+            "riotId": "Riot Id",
+            "riotKey": "Riot Key",
+            "version": "Version",
+            "name": "Name",
+            "title": "Title",
+            "blurb": "Blurb",
+            "member": "Member"
+        }
+    }
+}

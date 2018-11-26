@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-image-heading" jhiTranslate="championSelectApp.image.home.createOrEditLabel">Create or edit a Image</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!image.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="image.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.image.widthStart" for="field_widthStart">Width Start</label>
+                    <input type="number" class="form-control" name="widthStart" id="field_widthStart"
+                        [(ngModel)]="image.widthStart" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.image.heightStart" for="field_heightStart">Height Start</label>
+                    <input type="number" class="form-control" name="heightStart" id="field_heightStart"
+                        [(ngModel)]="image.heightStart" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.image.widthEnd" for="field_widthEnd">Width End</label>
+                    <input type="number" class="form-control" name="widthEnd" id="field_widthEnd"
+                        [(ngModel)]="image.widthEnd" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.image.heightEnd" for="field_heightEnd">Height End</label>
+                    <input type="number" class="form-control" name="heightEnd" id="field_heightEnd"
+                        [(ngModel)]="image.heightEnd" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.image.group" for="field_group">Group</label>
+                    <input type="text" class="form-control" name="group" id="field_group"
+                        [(ngModel)]="image.group" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.image.sprite" for="field_sprite">Sprite</label>
+                    <input type="text" class="form-control" name="sprite" id="field_sprite"
+                        [(ngModel)]="image.sprite" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.image.full" for="field_full">Full</label>
+                    <input type="text" class="form-control" name="full" id="field_full"
+                        [(ngModel)]="image.full" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

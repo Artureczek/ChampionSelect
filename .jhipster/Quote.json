@@ -1,0 +1,26 @@
+{
+    "name": "Quote",
+    "fields": [
+        {
+            "fieldName": "text",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "soloMember",
+            "otherEntityName": "soloMember",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181112142330",
+    "entityTableName": "quote",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

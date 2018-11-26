@@ -1,0 +1,16 @@
+{
+    "championSelectApp": {
+        "Division" : {
+            "null": "",
+            "Iron": "Iron",
+            "Bronze": "Bronze",
+            "Silver": "Silver",
+            "Gold": "Gold",
+            "Platinum": "Platinum",
+            "Diamond": "Diamond",
+            "Master": "Master",
+            "Grandmaster": "Grandmaster",
+            "Challenger": "Challenger"
+        }
+    }
+}

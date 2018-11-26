@@ -1,0 +1,10 @@
+{
+    "championSelectApp": {
+        "Server" : {
+            "null": "",
+            "EUNE": "EUNE",
+            "EUW": "EUW",
+            "NA": "NA"
+        }
+    }
+}

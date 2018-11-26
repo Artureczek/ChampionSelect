@@ -1,0 +1,47 @@
+{
+    "name": "Champion",
+    "fields": [
+        {
+            "fieldName": "riotId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "riotKey",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "blurb",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "member",
+            "otherEntityName": "soloMember",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "mostPlayed"
+        }
+    ],
+    "changelogDate": "20181112142333",
+    "entityTableName": "champion",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

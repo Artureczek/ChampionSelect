@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="leagueAccount">
+            <h2><span jhiTranslate="championSelectApp.leagueAccount.detail.title">League Account</span> {{leagueAccount.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.summonersId">Summoners Id</span></dt>
+                <dd>
+                    <span>{{leagueAccount.summonersId}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.name">Name</span></dt>
+                <dd>
+                    <span>{{leagueAccount.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.level">Level</span></dt>
+                <dd>
+                    <span>{{leagueAccount.level}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.server">Server</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'championSelectApp.Server.' + leagueAccount.server}}">{{leagueAccount.server}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.division">Division</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'championSelectApp.Division.' + leagueAccount.division}}">{{leagueAccount.division}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.tier">Tier</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'championSelectApp.Tier.' + leagueAccount.tier}}">{{leagueAccount.tier}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.lp">Lp</span></dt>
+                <dd>
+                    <span>{{leagueAccount.lp}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.latest">Latest</span></dt>
+                <dd>
+                    <span>{{leagueAccount.latest}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.leagueAccount.lastUpdate">Last Update</span></dt>
+                <dd>
+                    <span>{{leagueAccount.lastUpdate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/league-account', leagueAccount.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

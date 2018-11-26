@@ -1,6 +1,11 @@
 /* after changing this file run 'npm run webpack:build' */
 /* tslint:disable */
 import '../content/scss/vendor.scss';
+// import * as $ from 'jquery';
+// import '../js/jquery-ui-1.10.3.custom.min.js';
+// import '../js/jquery.kinetic.min.js';
+// import '../js/jquery.mousewheel.min.js';
+// import '../js/jquery.smoothdivscroll-1.3-min.js';
 
 // Imports all fontawesome core and solid icons
 

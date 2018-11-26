@@ -2,7 +2,7 @@ entity SoloMember {
     name String
     surname String
     description String
-    LeagueAccount String
+    hometown String
 }
 
 entity Quote {
@@ -14,20 +14,11 @@ entity LeagueAccount {
     name String
     level Integer
     server Server
-    isMain Boolean
     division Division
     tier Tier
     lp Long
-}
-
-entity Image {
-	widthStart Long,
-    heightStart Long,
-    widthEnd Long,
-    heightEnd Long,
-    group String,
-    sprite String,
-    full String
+	latest Boolean
+    lastUpdate LocalDate
 }
 
  entity Champion {
@@ -40,18 +31,17 @@ entity Image {
     blurb String
 }
 
+relationship OneToOne {
+    SoloMember{account} to LeagueAccount
+}
+
 relationship OneToMany {
-  SoloMember{quote} to Quote
-  SoloMember{account} to LeagueAccount
+    SoloMember{quote} to Quote
 }
 
 relationship ManyToMany{
     SoloMember {mostPlayed} to Champion {member}
     SoloMember {member} to SoloMember {partner}
-}
-
-relationship OneToOne {
- 	SoloMember {image} to Image
 }
 
 enum Server {
@@ -66,5 +56,5 @@ enum Tier {
     One, Two, Three, Four, Five, NA
 }
 
-service SoloMember, Quote, LeagueAccount, Image, Champion with serviceClass
-paginate SoloMember, Quote, LeagueAccount, Image, Champion with infinite-scroll
+service SoloMember, Quote, LeagueAccount, Champion with serviceClass
+paginate SoloMember, Quote, LeagueAccount, Champion with infinite-scroll

@@ -1,0 +1,69 @@
+{
+    "name": "SoloMember",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hometown",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "account",
+            "otherEntityName": "leagueAccount",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "soloMember"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "quote",
+            "otherEntityName": "quote",
+            "otherEntityRelationshipName": "soloMember"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "member",
+            "relationshipName": "mostPlayed",
+            "otherEntityName": "champion",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "partner",
+            "relationshipName": "member",
+            "otherEntityName": "soloMember",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "partner",
+            "otherEntityName": "soloMember",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "member"
+        }
+    ],
+    "changelogDate": "20181112142329",
+    "entityTableName": "solo_member",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

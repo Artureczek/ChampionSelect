@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="champion">
+            <h2><span jhiTranslate="championSelectApp.champion.detail.title">Champion</span> {{champion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="championSelectApp.champion.riotId">Riot Id</span></dt>
+                <dd>
+                    <span>{{champion.riotId}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.champion.riotKey">Riot Key</span></dt>
+                <dd>
+                    <span>{{champion.riotKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.champion.version">Version</span></dt>
+                <dd>
+                    <span>{{champion.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.champion.name">Name</span></dt>
+                <dd>
+                    <span>{{champion.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.champion.title">Title</span></dt>
+                <dd>
+                    <span>{{champion.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.champion.blurb">Blurb</span></dt>
+                <dd>
+                    <span>{{champion.blurb}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/champion', champion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

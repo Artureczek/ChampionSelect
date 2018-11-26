@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity SoloMember.
+    -->
+    <changeSet id="20181112142329-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="account_id"
+                                 baseTableName="solo_member"
+                                 constraintName="fk_solo_member_account_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="league_account"/>
+
+        <addForeignKeyConstraint baseColumnNames="solo_members_id"
+                                 baseTableName="solo_member_most_played"
+                                 constraintName="solo_member_mo_solo_members_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="solo_member"/>
+        <addForeignKeyConstraint baseColumnNames="most_playeds_id"
+                                 baseTableName="solo_member_most_played"
+                                 constraintName="solo_member_mo_most_playeds_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="champion"/>
+        
+        <addForeignKeyConstraint baseColumnNames="solo_members_id"
+                                 baseTableName="solo_member_member"
+                                 constraintName="solo_member_me_solo_members_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="solo_member"/>
+        <addForeignKeyConstraint baseColumnNames="members_id"
+                                 baseTableName="solo_member_member"
+                                 constraintName="solo_member_me_members_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="solo_member"/>
+        
+    </changeSet>
+</databaseChangeLog>

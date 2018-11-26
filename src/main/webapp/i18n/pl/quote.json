@@ -1,0 +1,23 @@
+
+{
+    "championSelectApp": {
+        "quote" : {
+            "home": {
+                "title": "Quote",
+                "createLabel": "Dodaj Quote",
+                "createOrEditLabel": "Dodaj lub edytuj: Quote"
+            },
+            "created": "Utworzono nowy obiekt typu Quote z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Quote z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Quote z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Quote {{ id }}?"
+            },
+            "detail": {
+                "title": "Quote"
+            },
+            "text": "Text",
+            "soloMember": "Solo Member"
+        }
+    }
+}
