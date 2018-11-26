@@ -1,9 +1,9 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class ParticipantIdentity {
+public class RiotParticipantIdentityDTO {
 
     private Long participantId;
-    private Player player;
+    private RiotPlayerDTO riotPlayerDTO;
 
     public Long getParticipantId() {
         return participantId;
@@ -13,19 +13,19 @@ public class ParticipantIdentity {
         this.participantId = participantId;
     }
 
-    public Player getPlayer() {
-        return player;
+    public RiotPlayerDTO getRiotPlayerDTO() {
+        return riotPlayerDTO;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setRiotPlayerDTO(RiotPlayerDTO riotPlayerDTO) {
+        this.riotPlayerDTO = riotPlayerDTO;
     }
 
     @Override
     public String toString() {
-        return "ParticipantIdentity{" +
+        return "RiotParticipantIdentityDTO{" +
             "participantId=" + participantId +
-            ", player=" + player +
+            ", riotPlayerDTO=" + riotPlayerDTO +
             '}';
     }
 }

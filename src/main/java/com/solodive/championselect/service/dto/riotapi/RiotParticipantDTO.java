@@ -1,13 +1,13 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class Participant {
+public class RiotParticipantDTO {
     private Long participantId;
     private Long teamId;
     private Long championId;
     private Long spell1Id;
     private Long spell2Id;
     private String highestAchievedSeasonTier;
-    private Stats stats;
+    private RiotParticipantStatsDTO riotParticipantStatsDTO;
 
 
     public Long getParticipantId() {
@@ -58,25 +58,25 @@ public class Participant {
         this.highestAchievedSeasonTier = highestAchievedSeasonTier;
     }
 
-    public Stats getStats() {
-        return stats;
+    public RiotParticipantStatsDTO getRiotParticipantStatsDTO() {
+        return riotParticipantStatsDTO;
     }
 
-    public void setStats(Stats stats) {
-        this.stats = stats;
+    public void setRiotParticipantStatsDTO(RiotParticipantStatsDTO riotParticipantStatsDTO) {
+        this.riotParticipantStatsDTO = riotParticipantStatsDTO;
     }
 
 
     @Override
     public String toString() {
-        return "Participant{" +
+        return "RiotParticipantDTO{" +
             "participantId=" + participantId +
             ", teamId=" + teamId +
             ", championId=" + championId +
             ", spell1Id=" + spell1Id +
             ", spell2Id=" + spell2Id +
             ", highestAchievedSeasonTier='" + highestAchievedSeasonTier + '\'' +
-            ", stats=" + stats +
+            ", riotParticipantStatsDTO=" + riotParticipantStatsDTO +
             '}';
     }
 }

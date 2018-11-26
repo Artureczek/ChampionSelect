@@ -1,7 +1,7 @@
 package com.solodive.championselect.service.dto.riotapi;
 
 
-public class ChampionStats {
+public class RiotChampionStatsDTO {
 
     private Double hp;
     private Double hpperlevel;
@@ -186,7 +186,7 @@ public class ChampionStats {
 
     @Override
     public String toString() {
-        return "ChampionStats{" +
+        return "RiotChampionStatsDTO{" +
             "hp=" + hp +
             ", hpperlevel=" + hpperlevel +
             ", mp=" + mp +
