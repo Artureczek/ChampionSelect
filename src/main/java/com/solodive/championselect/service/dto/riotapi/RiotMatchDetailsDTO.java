@@ -3,7 +3,7 @@ package com.solodive.championselect.service.dto.riotapi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MatchDetails {
+public class RiotMatchDetailsDTO {
     private Long gameId;
     private String platformId;
     private Long gameCreation;
@@ -14,8 +14,8 @@ public class MatchDetails {
     private String gameVersion;
     private String gameMode;
     private String gameType;
-    private List<Participant> participants = new ArrayList<>();
-    private List<ParticipantIdentity> participantIdentities = new ArrayList<>();
+    private List<RiotParticipantDTO> riotParticipantDTOS = new ArrayList<>();
+    private List<RiotParticipantIdentityDTO> participantIdentities = new ArrayList<>();
 
 
     public Long getGameId() {
@@ -98,26 +98,26 @@ public class MatchDetails {
         this.gameType = gameType;
     }
 
-    public List<ParticipantIdentity> getParticipantIdentities() {
+    public List<RiotParticipantIdentityDTO> getParticipantIdentities() {
         return participantIdentities;
     }
 
-    public void setParticipantIdentities(List<ParticipantIdentity> participantIdentities) {
+    public void setParticipantIdentities(List<RiotParticipantIdentityDTO> participantIdentities) {
         this.participantIdentities = participantIdentities;
     }
 
-    public List<Participant> getParticipants() {
-        return participants;
+    public List<RiotParticipantDTO> getRiotParticipantDTOS() {
+        return riotParticipantDTOS;
     }
 
-    public void setParticipants(List<Participant> participants) {
-        this.participants = participants;
+    public void setRiotParticipantDTOS(List<RiotParticipantDTO> riotParticipantDTOS) {
+        this.riotParticipantDTOS = riotParticipantDTOS;
     }
 
 
     @Override
     public String toString() {
-        return "MatchDetails{" +
+        return "RiotMatchDetailsDTO{" +
             "gameId=" + gameId +
             ", platformId='" + platformId + '\'' +
             ", gameCreation=" + gameCreation +
@@ -128,7 +128,7 @@ public class MatchDetails {
             ", gameVersion='" + gameVersion + '\'' +
             ", gameMode='" + gameMode + '\'' +
             ", gameType='" + gameType + '\'' +
-            ", participants=" + participants +
+            ", riotParticipantDTOS=" + riotParticipantDTOS +
             ", participantIdentities=" + participantIdentities +
             '}';
     }

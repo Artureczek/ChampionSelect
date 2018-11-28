@@ -1,6 +1,6 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class Stats {
+public class RiotParticipantStatsDTO {
     private Long participantId;
     private Boolean win;
     private Long kills;
@@ -248,7 +248,7 @@ public class Stats {
 
     @Override
     public String toString() {
-        return "Stats{" +
+        return "RiotParticipantStatsDTO{" +
             "participantId=" + participantId +
             ", win=" + win +
             ", kills=" + kills +

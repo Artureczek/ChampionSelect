@@ -1,6 +1,6 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class ChampionInfo {
+public class RiotChampionInfoDTO {
 
     private Long attack;
     private Long defense;
@@ -42,7 +42,7 @@ public class ChampionInfo {
 
     @Override
     public String toString() {
-        return "ChampionInfo{" +
+        return "RiotChampionInfoDTO{" +
             "attack=" + attack +
             ", defense=" + defense +
             ", magic=" + magic +

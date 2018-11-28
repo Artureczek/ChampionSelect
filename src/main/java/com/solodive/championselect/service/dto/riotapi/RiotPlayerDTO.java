@@ -1,6 +1,6 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class Player {
+public class RiotPlayerDTO {
     private String platformId;
     private Long accountId;
     private String summonerName;
@@ -76,7 +76,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
+        return "RiotPlayerDTO{" +
             "platformId='" + platformId + '\'' +
             ", accountId=" + accountId +
             ", summonerName='" + summonerName + '\'' +

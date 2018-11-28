@@ -3,7 +3,7 @@ package com.solodive.championselect.service.dto.riotapi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Champion {
+public class RiotChampionDTO {
 
     private String version;
     private String id;
@@ -11,11 +11,11 @@ public class Champion {
     private String name;
     private String title;
     private String blurb;
-    private ChampionInfo info;
-    private ChampionImage image;
+    private RiotChampionInfoDTO info;
+    private RiotChampionImageDTO image;
     private List<String> tags = new ArrayList<>();
     private String partype;
-    private ChampionStats stats;
+    private RiotChampionStatsDTO stats;
 
 
     public String getVersion() {
@@ -66,19 +66,19 @@ public class Champion {
         this.blurb = blurb;
     }
 
-    public ChampionInfo getInfo() {
+    public RiotChampionInfoDTO getInfo() {
         return info;
     }
 
-    public void setInfo(ChampionInfo info) {
+    public void setInfo(RiotChampionInfoDTO info) {
         this.info = info;
     }
 
-    public ChampionImage getImage() {
+    public RiotChampionImageDTO getImage() {
         return image;
     }
 
-    public void setImage(ChampionImage image) {
+    public void setImage(RiotChampionImageDTO image) {
         this.image = image;
     }
 
@@ -98,11 +98,11 @@ public class Champion {
         this.partype = partype;
     }
 
-    public ChampionStats getStats() {
+    public RiotChampionStatsDTO getStats() {
         return stats;
     }
 
-    public void setStats(ChampionStats stats) {
+    public void setStats(RiotChampionStatsDTO stats) {
         this.stats = stats;
     }
 
