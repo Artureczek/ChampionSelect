@@ -1,6 +1,6 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class Match {
+public class RiotMatchDTO {
     private String lane;
     private Long gameId;
     private Long champion;
@@ -76,7 +76,7 @@ public class Match {
 
     @Override
     public String toString() {
-        return "Match{" +
+        return "RiotMatchDTO{" +
             "lane='" + lane + '\'' +
             ", gameId=" + gameId +
             ", champion=" + champion +
