@@ -1,11 +1,11 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class RiotExtendedSummonerDTO {
 
     private RiotBasicSummonerDTO riotBasicSummonerDTO;
-    private RiotSummonerRankDTO[] riotSummonerRankDTO;
+    private List<RiotSummonerRankDTO> riotSummonerRankDTO;
     private RiotSummonerMatchesDTO riotSummonerMatchesDTO;
 
 
@@ -17,11 +17,11 @@ public class RiotExtendedSummonerDTO {
         this.riotBasicSummonerDTO = riotBasicSummonerDTO;
     }
 
-    public RiotSummonerRankDTO[] getRiotSummonerRankDTO() {
+    public List<RiotSummonerRankDTO> getRiotSummonerRankDTO() {
         return riotSummonerRankDTO;
     }
 
-    public void setRiotSummonerRankDTO(RiotSummonerRankDTO[] riotSummonerRankDTO) {
+    public void setRiotSummonerRankDTO(List<RiotSummonerRankDTO> riotSummonerRankDTO) {
         this.riotSummonerRankDTO = riotSummonerRankDTO;
     }
 
@@ -37,7 +37,7 @@ public class RiotExtendedSummonerDTO {
     public String toString() {
         return "RiotExtendedSummonerDTO{" +
             "riotBasicSummonerDTO=" + riotBasicSummonerDTO +
-            ", riotSummonerRankDTO=" + Arrays.toString(riotSummonerRankDTO) +
+            ", riotSummonerRankDTO=" + riotSummonerRankDTO +
             ", riotSummonerMatchesDTO=" + riotSummonerMatchesDTO +
             '}';
     }
