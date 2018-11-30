@@ -73,11 +73,11 @@ public class SummonerRank {
         this.playerOrTeamName = playerOrTeamName;
     }
 
-    public Long getLeaguePoLongs() {
+    public Long getLeaguePoints() {
         return leaguePoints;
     }
 
-    public void setLeaguePoLongs(Long leaguePoints) {
+    public void setLeaguePoints(Long leaguePoints) {
         this.leaguePoints = leaguePoints;
     }
 

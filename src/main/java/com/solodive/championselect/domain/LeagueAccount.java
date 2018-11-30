@@ -1,5 +1,7 @@
 package com.solodive.championselect.domain;
 
+import com.solodive.championselect.service.dto.riotapi.ExtendedSummoner;
+import com.solodive.championselect.service.dto.riotapi.SummonerRank;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -59,6 +61,28 @@ public class LeagueAccount implements Serializable {
 
     @Column(name = "last_update")
     private LocalDate lastUpdate;
+
+    public LeagueAccount() {
+    }
+
+    public LeagueAccount(ExtendedSummoner extendedSummoner) {
+        SummonerRank soloQ = new SummonerRank();
+        for (SummonerRank summonerRank : extendedSummoner.getSummonerRank()) {
+            if (summonerRank.getQueueType().equals("RANKED_SOLO_5x5")) {
+                soloQ = summonerRank;
+            }
+        }
+        this.summonersId = extendedSummoner.getBasicSummoner().getAccountId();
+        this.division = Division.valueOf(soloQ.getRank());
+        this.tier = Tier.valueOf(soloQ.getTier());
+        //not present in API??
+        this.level = null;
+        this.lastUpdate = LocalDate.now();
+        this.latest = true;
+        this.name = extendedSummoner.getBasicSummoner().getName();
+        this.lp = soloQ.getLeaguePoints();
+        this.server = Server.EUNE;
+    }
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {

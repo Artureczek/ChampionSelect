@@ -1,7 +1,9 @@
 package com.solodive.championselect.service;
 
+import com.solodive.championselect.domain.LeagueAccount;
 import com.solodive.championselect.domain.SoloMember;
 import com.solodive.championselect.repository.SoloMemberRepository;
+import com.solodive.championselect.service.dto.riotapi.ExtendedSummoner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,7 +59,7 @@ public class SoloMemberService {
     public Page<SoloMember> findAllWithEagerRelationships(Pageable pageable) {
         return soloMemberRepository.findAllWithEagerRelationships(pageable);
     }
-    
+
 
     /**
      * Get one soloMember by id.
