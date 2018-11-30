@@ -1,6 +1,7 @@
 package com.solodive.championselect.service.ftp;
 
 import com.solodive.championselect.service.ftp.exception.FTPConnectionFailureException;
+import com.solodive.championselect.service.ftp.exception.FTPFileSaveUnsuccessfulException;
 import com.solodive.championselect.service.ftp.exception.FTPRequestNotFoundException;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -40,6 +42,55 @@ public class FTPService {
         return downloadedFile;
     }
 
+    public void saveFileToFTP(byte[] fileToSave, String path, String fileName) throws IOException {
+        openFTPConnection();
+        saveFile(fileToSave, path, fileName);
+        closeFTPConnection();
+    }
+
+
+    private void saveFile(byte[] fileToSave, String path, String fileName) throws IOException {
+        try (ByteArrayInputStream fileInputStream = new ByteArrayInputStream(fileToSave)) {
+
+            log.debug("Trying to save file for path and name: {}:{}", path, fileName);
+            boolean directoryChangeSuccessful = ftpClient.changeWorkingDirectory(path);
+            if (!directoryChangeSuccessful) {
+                throw new FTPRequestNotFoundException("Could not change ftp directory for given path: " + path);
+            }
+            boolean fileSaveSuccessful = ftpClient.storeFile(fileName, fileInputStream);
+
+            if (!fileSaveSuccessful) {
+                throw new FTPRequestNotFoundException("Could not save file to ftp server for given name: " + fileName);
+            }
+
+        } catch (IOException | FTPRequestNotFoundException e) {
+            closeFTPConnection();
+            throw e;
+        }
+    }
+
+
+    private byte[] downloadFile(String path, String fileName) throws IOException {
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+
+            log.debug("Trying to retrieve file for path and name: {}:{}", path, fileName);
+            boolean directoryChangeSuccessful = ftpClient.changeWorkingDirectory(path);
+            if (!directoryChangeSuccessful) {
+                throw new FTPFileSaveUnsuccessfulException("Could not change ftp directory for given path: " + path);
+            }
+
+            boolean fileRetrievalSuccessful = ftpClient.retrieveFile(fileName, out);
+            if (!fileRetrievalSuccessful) {
+                throw new FTPFileSaveUnsuccessfulException("Could not find file: " + fileName);
+            }
+            return out.toByteArray();
+
+        } catch (IOException | FTPFileSaveUnsuccessfulException e) {
+            closeFTPConnection();
+            throw e;
+        }
+    }
+
     private void openFTPConnection() throws IOException {
         log.debug("Trying to establish ftp connection: {}:{}", server, port);
         ftpClient.connect(server, Integer.valueOf(port));
@@ -61,26 +112,5 @@ public class FTPService {
     private void closeFTPConnection() throws IOException {
         log.debug("Closing ftp connection");
         ftpClient.disconnect();
-    }
-
-    private byte[] downloadFile(String path, String fileName) throws IOException {
-        try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
-
-            log.debug("Trying to retrieve file for path and name: {}:{}", path, fileName);
-            boolean directoryChangeSuccessful = ftpClient.changeWorkingDirectory(path);
-            if (!directoryChangeSuccessful) {
-                throw new FTPRequestNotFoundException("Could not change ftp directory for given path: " + path);
-            }
-
-            boolean fileRetrievalSuccessful = ftpClient.retrieveFile(fileName, out);
-            if (!fileRetrievalSuccessful) {
-                throw new FTPRequestNotFoundException("Could not find file: " + fileName);
-            }
-            return out.toByteArray();
-
-        } catch (IOException | FTPRequestNotFoundException e) {
-            closeFTPConnection();
-            throw e;
-        }
     }
 }
