@@ -1,6 +1,6 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class ChampionImage {
+public class RiotChampionImageDTO {
 
     private String full;
     private String sprite;
@@ -69,7 +69,7 @@ public class ChampionImage {
 
     @Override
     public String toString() {
-        return "ChampionImage{" +
+        return "RiotChampionImageDTO{" +
             "full='" + full + '\'' +
             ", sprite='" + sprite + '\'' +
             ", group='" + group + '\'' +
