@@ -55,15 +55,15 @@ public class FTPService {
             log.debug("Trying to save file for path and name: {}:{}", path, fileName);
             boolean directoryChangeSuccessful = ftpClient.changeWorkingDirectory(path);
             if (!directoryChangeSuccessful) {
-                throw new FTPRequestNotFoundException("Could not change ftp directory for given path: " + path);
+                throw new FTPFileSaveUnsuccessfulException("Could not change ftp directory for given path: " + path);
             }
             boolean fileSaveSuccessful = ftpClient.storeFile(fileName, fileInputStream);
 
             if (!fileSaveSuccessful) {
-                throw new FTPRequestNotFoundException("Could not save file to ftp server for given name: " + fileName);
+                throw new FTPFileSaveUnsuccessfulException("Could not save file to ftp server for given name: " + fileName);
             }
 
-        } catch (IOException | FTPRequestNotFoundException e) {
+        } catch (IOException | FTPFileSaveUnsuccessfulException e) {
             closeFTPConnection();
             throw e;
         }
@@ -76,16 +76,16 @@ public class FTPService {
             log.debug("Trying to retrieve file for path and name: {}:{}", path, fileName);
             boolean directoryChangeSuccessful = ftpClient.changeWorkingDirectory(path);
             if (!directoryChangeSuccessful) {
-                throw new FTPFileSaveUnsuccessfulException("Could not change ftp directory for given path: " + path);
+                throw new FTPRequestNotFoundException("Could not change ftp directory for given path: " + path);
             }
 
             boolean fileRetrievalSuccessful = ftpClient.retrieveFile(fileName, out);
             if (!fileRetrievalSuccessful) {
-                throw new FTPFileSaveUnsuccessfulException("Could not find file: " + fileName);
+                throw new FTPRequestNotFoundException("Could not find file: " + fileName);
             }
             return out.toByteArray();
 
-        } catch (IOException | FTPFileSaveUnsuccessfulException e) {
+        } catch (IOException | FTPRequestNotFoundException e) {
             closeFTPConnection();
             throw e;
         }
