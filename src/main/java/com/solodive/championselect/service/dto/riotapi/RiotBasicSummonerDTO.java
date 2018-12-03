@@ -1,6 +1,6 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class BasicSummoner {
+public class RiotBasicSummonerDTO {
 
     private Long id;
     private String name;
@@ -61,7 +61,7 @@ public class BasicSummoner {
 
     @Override
     public String toString() {
-        return "BasicSummoner{" +
+        return "RiotBasicSummonerDTO{" +
             "id=" + id +
             ", name='" + name + '\'' +
             ", profileIconId=" + profileIconId +

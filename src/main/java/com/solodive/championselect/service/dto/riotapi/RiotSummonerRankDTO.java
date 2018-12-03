@@ -1,6 +1,6 @@
 package com.solodive.championselect.service.dto.riotapi;
 
-public class SummonerRank {
+public class RiotSummonerRankDTO {
 
     private String leagueId;
     private String leagueName;
@@ -132,7 +132,7 @@ public class SummonerRank {
 
     @Override
     public String toString() {
-        return "SummonerRank{" +
+        return "RiotSummonerRankDTO{" +
             "leagueId='" + leagueId + '\'' +
             ", leagueName='" + leagueName + '\'' +
             ", tier='" + tier + '\'' +

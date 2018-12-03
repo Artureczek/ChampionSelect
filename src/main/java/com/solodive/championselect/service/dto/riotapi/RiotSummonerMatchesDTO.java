@@ -3,11 +3,11 @@ package com.solodive.championselect.service.dto.riotapi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SummonerMatches {
+public class RiotSummonerMatchesDTO {
     private Long totalGames;
     private Long startIndex;
     private Long endIndex;
-    private List<Match> matches = new ArrayList<>();
+    private List<RiotMatchDTO> riotMatchDTOS = new ArrayList<>();
 
     public Long getTotalGames() {
         return totalGames;
@@ -33,22 +33,22 @@ public class SummonerMatches {
         this.endIndex = endIndex;
     }
 
-    public List<Match> getMatches() {
-        return matches;
+    public List<RiotMatchDTO> getRiotMatchDTOS() {
+        return riotMatchDTOS;
     }
 
-    public void setMatches(List<Match> matches) {
-        this.matches = matches;
+    public void setRiotMatchDTOS(List<RiotMatchDTO> riotMatchDTOS) {
+        this.riotMatchDTOS = riotMatchDTOS;
     }
 
 
     @Override
     public String toString() {
-        return "SummonerMatches{" +
+        return "RiotSummonerMatchesDTO{" +
             "totalGames=" + totalGames +
             ", startIndex=" + startIndex +
             ", endIndex=" + endIndex +
-            ", matches=" + matches +
+            ", riotMatchDTOS=" + riotMatchDTOS +
             '}';
     }
 }
