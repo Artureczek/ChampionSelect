@@ -102,6 +102,29 @@ jhipster:
 logging:
     file: target/ChampionSelect.log
 
+
+riotapi:
+        api-key: RGAPI-83ca4047-1877-4489-874c-49b36c87ce1b
+
+        base-url: https://eun1.api.riotgames.com/lol/
+        summoner-by-name-url: summoner/v3/summoners/by-name/{parameter}?api_key={api-key}
+        summoner-by-id-url: summoner/v3/summoners/{parameter}?api_key={api-key}
+        rank-by-id-url: league/v3/positions/by-summoner/{parameter}?api_key={api-key}
+        matches-list-by-id-url: match/v3/matchlists/by-account/{parameter}?api_key={api-key}
+        match-by-id-url: match/v3/matches/{parameter}?api_key={api-key}
+
+        data-dragon-url: http://ddragon.leagueoflegends.com/
+        champion-data-url: cdn/6.24.1/data/en_US/champion.json
+
+
+
+
+
+
+
+
+
+
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
