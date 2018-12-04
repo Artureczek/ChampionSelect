@@ -1,6 +1,7 @@
 package com.solodive.championselect.service;
 
 import com.solodive.championselect.domain.ChampionTag;
+import com.solodive.championselect.domain.enumeration.ChampionTagValue;
 import com.solodive.championselect.repository.ChampionTagRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,4 +70,15 @@ public class ChampionTagService {
         log.debug("Request to delete ChampionTag : {}", id);
         championTagRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<ChampionTag> dindByTag(ChampionTagValue championTagValue) {
+        return championTagRepository.findByTag(championTagValue);
+    }
+
+    @Transactional(readOnly = true)
+    public List<ChampionTag> findByTagIn(List<ChampionTagValue> championTagValueList) {
+        return championTagRepository.findByTagIn(championTagValueList);
+    }
+
 }

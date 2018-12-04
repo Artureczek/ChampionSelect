@@ -1,5 +1,7 @@
 package com.solodive.championselect.domain.enumeration;
 
+import com.solodive.championselect.service.exception.ChampionResourceUnknownTypeException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,7 +26,14 @@ public enum ChampionResourceType {
         this.value = value;
     }
 
-    public static ChampionResourceType getType(String value) {
+    public static ChampionResourceType getType(String value) throws ChampionResourceUnknownTypeException {
+        ChampionResourceType type = ChampionResourceTypeHolder.MAP.get(value);
+        if (type == null)
+            throw new ChampionResourceUnknownTypeException("Could not map: " + value + " to any known ChampionResourceType type!");
+        return type;
+    }
+
+    public static ChampionResourceType getTypeIgnoreException(String value) {
         return ChampionResourceTypeHolder.MAP.get(value);
     }
 

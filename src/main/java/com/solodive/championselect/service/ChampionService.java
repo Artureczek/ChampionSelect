@@ -1,8 +1,10 @@
 package com.solodive.championselect.service;
 
 import com.solodive.championselect.domain.Champion;
+import com.solodive.championselect.domain.enumeration.ChampionTagValue;
 import com.solodive.championselect.repository.ChampionRepository;
 import com.solodive.championselect.service.dto.riotapi.RiotChampionDTO;
+import com.solodive.championselect.service.exception.ChampionTagUnknownValueException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,8 +29,12 @@ public class ChampionService {
 
     private final ChampionRepository championRepository;
 
-    public ChampionService(ChampionRepository championRepository) {
+    private final ChampionTagService championTagService;
+
+    public ChampionService(ChampionRepository championRepository,
+                           ChampionTagService championTagService) {
         this.championRepository = championRepository;
+        this.championTagService = championTagService;
     }
 
     /**
@@ -85,15 +92,45 @@ public class ChampionService {
     }
 
     public Champion save(RiotChampionDTO riotChampionDTO) {
-        return championRepository.save(new Champion(riotChampionDTO));
+        if (riotChampionDTO != null) {
+            return championRepository.save(
+                attachTags(
+                    new Champion(riotChampionDTO),
+                    riotChampionDTO.getTags()
+                )
+            );
+        }
+        return null;
     }
 
     public List<Champion> save(List<RiotChampionDTO> riotChampionDTOList) {
-        return championRepository.saveAll(
-            riotChampionDTOList
-                .stream()
-                .map(Champion::new)
-                .collect(Collectors.toList())
-        );
+        if (riotChampionDTOList != null && riotChampionDTOList.size() > 0) {
+            return championRepository.saveAll(
+                riotChampionDTOList
+                    .stream()
+                    .map(riotChampionDTO ->
+                        attachTags(
+                            new Champion(riotChampionDTO),
+                            riotChampionDTO.getTags()
+                        ))
+                    .collect(Collectors.toList())
+            );
+        }
+        return new ArrayList<>();
+    }
+
+    private Champion attachTags(Champion champion, List<String> stringTags) throws ChampionTagUnknownValueException {
+        if (stringTags != null && stringTags.size() > 0) {
+            champion
+                .addMultipleTags(
+                    championTagService.findByTagIn(
+                        stringTags
+                            .stream()
+                            .map(ChampionTagValue::getType)
+                            .collect(Collectors.toList())
+                    )
+                );
+        }
+        return champion;
     }
 }

@@ -3,6 +3,7 @@ package com.solodive.championselect.domain;
 import com.solodive.championselect.service.dto.riotapi.RiotChampionDTO;
 import com.solodive.championselect.service.dto.riotapi.RiotChampionInfoDTO;
 import com.solodive.championselect.service.dto.riotapi.RiotChampionStatsDTO;
+import com.solodive.championselect.service.exception.ChampionResourceUnknownTypeException;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -12,6 +13,7 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.Objects;
 
@@ -149,7 +151,7 @@ public class Champion implements Serializable {
 
     public Champion() {}
 
-    public Champion(RiotChampionDTO riotChampionDTO) {
+    public Champion(RiotChampionDTO riotChampionDTO) throws ChampionResourceUnknownTypeException {
 
         this
             .riotId(riotChampionDTO.getId())
@@ -659,6 +661,16 @@ public class Champion implements Serializable {
     public Champion addTags(ChampionTag championTag) {
         this.tags.add(championTag);
         championTag.getChampions().add(this);
+        return this;
+    }
+
+    public Champion addMultipleTags(List<ChampionTag> championTagList) {
+        if (championTagList != null && championTagList.size() > 0) {
+            this.tags.addAll(championTagList);
+            championTagList.forEach(
+                championTag -> championTag.getChampions().add(this)
+            );
+        }
         return this;
     }
 
