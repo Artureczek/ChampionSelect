@@ -26,7 +26,7 @@ public enum ChampionTagValue {
         this.value = value;
     }
 
-    public static ChampionTagValue getType(String value) throws ChampionTagUnknownValueException {
+    public static ChampionTagValue getType(String value) {
         ChampionTagValue type = ChampionTagValue.ChampionTagValueHolder.MAP.get(value);
         if (type == null)
             throw new ChampionTagUnknownValueException("Could not map: " + value + " to any known ChampionTagValue type!");

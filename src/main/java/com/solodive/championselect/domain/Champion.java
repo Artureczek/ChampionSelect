@@ -151,7 +151,7 @@ public class Champion implements Serializable {
 
     public Champion() {}
 
-    public Champion(RiotChampionDTO riotChampionDTO) throws ChampionResourceUnknownTypeException {
+    public Champion(RiotChampionDTO riotChampionDTO) {
 
         this
             .riotId(riotChampionDTO.getId())

@@ -119,7 +119,7 @@ public class ChampionService {
         return new ArrayList<>();
     }
 
-    private Champion attachTags(Champion champion, List<String> stringTags) throws ChampionTagUnknownValueException {
+    private Champion attachTags(Champion champion, List<String> stringTags) {
         if (stringTags != null && stringTags.size() > 0) {
             champion
                 .addMultipleTags(

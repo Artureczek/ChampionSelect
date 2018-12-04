@@ -26,7 +26,7 @@ public enum ChampionResourceType {
         this.value = value;
     }
 
-    public static ChampionResourceType getType(String value) throws ChampionResourceUnknownTypeException {
+    public static ChampionResourceType getType(String value) {
         ChampionResourceType type = ChampionResourceTypeHolder.MAP.get(value);
         if (type == null)
             throw new ChampionResourceUnknownTypeException("Could not map: " + value + " to any known ChampionResourceType type!");
