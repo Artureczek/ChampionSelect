@@ -30,24 +30,6 @@ describe('Service Tests', () => {
                 expect(req.request.url).toEqual(resourceUrl + '/' + 123);
             });
 
-            it('should create a ChampionTag', () => {
-                service.create(new ChampionTag(null)).subscribe(received => {
-                    expect(received.body.id).toEqual(null);
-                });
-
-                const req = httpMock.expectOne({ method: 'POST' });
-                req.flush({ id: null });
-            });
-
-            it('should update a ChampionTag', () => {
-                service.update(new ChampionTag(123)).subscribe(received => {
-                    expect(received.body.id).toEqual(123);
-                });
-
-                const req = httpMock.expectOne({ method: 'PUT' });
-                req.flush({ id: 123 });
-            });
-
             it('should return a ChampionTag', () => {
                 service.find(123).subscribe(received => {
                     expect(received.body.id).toEqual(123);
@@ -64,15 +46,6 @@ describe('Service Tests', () => {
 
                 const req = httpMock.expectOne({ method: 'GET' });
                 req.flush([new ChampionTag(123)]);
-            });
-
-            it('should delete a ChampionTag', () => {
-                service.delete(123).subscribe(received => {
-                    expect(received.url).toContain('/' + 123);
-                });
-
-                const req = httpMock.expectOne({ method: 'DELETE' });
-                req.flush(null);
             });
 
             it('should propagate not found response', () => {

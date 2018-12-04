@@ -15,7 +15,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -39,15 +38,15 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.solodive.championselect.domain.enumeration.ChampionResourceType;
-import com.solodive.championselect.domain.enumeration.ChampionResourceType;
+
 /**
  * Test class for the ChampionResource REST controller.
  *
- * @see ChampionResource
+ * @see ChampionController
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ChampionSelectApp.class)
-public class ChampionResourceIntTest {
+public class ChampionControllerIntTest {
 
     private static final Long DEFAULT_INTERNAL_VERSION = 1L;
     private static final Long UPDATED_INTERNAL_VERSION = 2L;
@@ -183,8 +182,8 @@ public class ChampionResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final ChampionResource championResource = new ChampionResource(championService);
-        this.restChampionMockMvc = MockMvcBuilders.standaloneSetup(championResource)
+        final ChampionController championController = new ChampionController(championService);
+        this.restChampionMockMvc = MockMvcBuilders.standaloneSetup(championController)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())
@@ -395,10 +394,10 @@ public class ChampionResourceIntTest {
     }
     
     public void getAllChampionsWithEagerRelationshipsIsEnabled() throws Exception {
-        ChampionResource championResource = new ChampionResource(championServiceMock);
+        ChampionController championController = new ChampionController(championServiceMock);
         when(championServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
 
-        MockMvc restChampionMockMvc = MockMvcBuilders.standaloneSetup(championResource)
+        MockMvc restChampionMockMvc = MockMvcBuilders.standaloneSetup(championController)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())
@@ -411,9 +410,9 @@ public class ChampionResourceIntTest {
     }
 
     public void getAllChampionsWithEagerRelationshipsIsNotEnabled() throws Exception {
-        ChampionResource championResource = new ChampionResource(championServiceMock);
+        ChampionController championController = new ChampionController(championServiceMock);
             when(championServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-            MockMvc restChampionMockMvc = MockMvcBuilders.standaloneSetup(championResource)
+            MockMvc restChampionMockMvc = MockMvcBuilders.standaloneSetup(championController)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())

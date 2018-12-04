@@ -35,11 +35,11 @@ import com.solodive.championselect.domain.enumeration.ChampionTagValue;
 /**
  * Test class for the ChampionTagResource REST controller.
  *
- * @see ChampionTagResource
+ * @see ChampionTagController
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ChampionSelectApp.class)
-public class ChampionTagResourceIntTest {
+public class ChampionTagControllerIntTest {
 
     private static final ChampionTagValue DEFAULT_TAG = ChampionTagValue.FIGHTER;
     private static final ChampionTagValue UPDATED_TAG = ChampionTagValue.TANK;
@@ -69,8 +69,8 @@ public class ChampionTagResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final ChampionTagResource championTagResource = new ChampionTagResource(championTagService);
-        this.restChampionTagMockMvc = MockMvcBuilders.standaloneSetup(championTagResource)
+        final ChampionTagController championTagController = new ChampionTagController(championTagService);
+        this.restChampionTagMockMvc = MockMvcBuilders.standaloneSetup(championTagController)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())
