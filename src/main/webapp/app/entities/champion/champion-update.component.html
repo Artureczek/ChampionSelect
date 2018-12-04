@@ -1,0 +1,230 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-champion-heading" jhiTranslate="championSelectApp.champion.home.createOrEditLabel">Create or edit a Champion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!champion.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="champion.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.internalVersion" for="field_internalVersion">Internal Version</label>
+                    <input type="number" class="form-control" name="internalVersion" id="field_internalVersion"
+                        [(ngModel)]="champion.internalVersion" required/>
+                    <div [hidden]="!(editForm.controls.internalVersion?.dirty && editForm.controls.internalVersion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.internalVersion?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.internalVersion?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.lastModified" for="field_lastModified">Last Modified</label>
+                    <div class="d-flex">
+                        <input id="field_lastModified" type="datetime-local" class="form-control" name="lastModified" [(ngModel)]="lastModified"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.lastModified?.dirty && editForm.controls.lastModified?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.lastModified?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.lastModified?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.riotId" for="field_riotId">Riot Id</label>
+                    <input type="text" class="form-control" name="riotId" id="field_riotId"
+                        [(ngModel)]="champion.riotId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.riotKey" for="field_riotKey">Riot Key</label>
+                    <input type="text" class="form-control" name="riotKey" id="field_riotKey"
+                        [(ngModel)]="champion.riotKey" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.version" for="field_version">Version</label>
+                    <input type="text" class="form-control" name="version" id="field_version"
+                        [(ngModel)]="champion.version" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="champion.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                        [(ngModel)]="champion.title" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.blurb" for="field_blurb">Blurb</label>
+                    <input type="text" class="form-control" name="blurb" id="field_blurb"
+                        [(ngModel)]="champion.blurb" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.attack" for="field_attack">Attack</label>
+                    <input type="number" class="form-control" name="attack" id="field_attack"
+                        [(ngModel)]="champion.attack" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.defence" for="field_defence">Defence</label>
+                    <input type="number" class="form-control" name="defence" id="field_defence"
+                        [(ngModel)]="champion.defence" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.magic" for="field_magic">Magic</label>
+                    <input type="number" class="form-control" name="magic" id="field_magic"
+                        [(ngModel)]="champion.magic" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.difficulty" for="field_difficulty">Difficulty</label>
+                    <input type="number" class="form-control" name="difficulty" id="field_difficulty"
+                        [(ngModel)]="champion.difficulty" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.movementSpeed" for="field_movementSpeed">Movement Speed</label>
+                    <input type="number" class="form-control" name="movementSpeed" id="field_movementSpeed"
+                        [(ngModel)]="champion.movementSpeed" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.attackRange" for="field_attackRange">Attack Range</label>
+                    <input type="number" class="form-control" name="attackRange" id="field_attackRange"
+                        [(ngModel)]="champion.attackRange" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.armorFlat" for="field_armorFlat">Armor Flat</label>
+                    <input type="number" class="form-control" name="armorFlat" id="field_armorFlat"
+                        [(ngModel)]="champion.armorFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.armorPerLevel" for="field_armorPerLevel">Armor Per Level</label>
+                    <input type="number" class="form-control" name="armorPerLevel" id="field_armorPerLevel"
+                        [(ngModel)]="champion.armorPerLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.spellBlockFlat" for="field_spellBlockFlat">Spell Block Flat</label>
+                    <input type="number" class="form-control" name="spellBlockFlat" id="field_spellBlockFlat"
+                        [(ngModel)]="champion.spellBlockFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.spellBlockPerLevel" for="field_spellBlockPerLevel">Spell Block Per Level</label>
+                    <input type="number" class="form-control" name="spellBlockPerLevel" id="field_spellBlockPerLevel"
+                        [(ngModel)]="champion.spellBlockPerLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.criticalFlat" for="field_criticalFlat">Critical Flat</label>
+                    <input type="number" class="form-control" name="criticalFlat" id="field_criticalFlat"
+                        [(ngModel)]="champion.criticalFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.criticalPerLevel" for="field_criticalPerLevel">Critical Per Level</label>
+                    <input type="number" class="form-control" name="criticalPerLevel" id="field_criticalPerLevel"
+                        [(ngModel)]="champion.criticalPerLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.attackDamageFlat" for="field_attackDamageFlat">Attack Damage Flat</label>
+                    <input type="number" class="form-control" name="attackDamageFlat" id="field_attackDamageFlat"
+                        [(ngModel)]="champion.attackDamageFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.attackDamagePerLevel" for="field_attackDamagePerLevel">Attack Damage Per Level</label>
+                    <input type="number" class="form-control" name="attackDamagePerLevel" id="field_attackDamagePerLevel"
+                        [(ngModel)]="champion.attackDamagePerLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.attackSpeedFlat" for="field_attackSpeedFlat">Attack Speed Flat</label>
+                    <input type="number" class="form-control" name="attackSpeedFlat" id="field_attackSpeedFlat"
+                        [(ngModel)]="champion.attackSpeedFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.attackSpeedPerLevel" for="field_attackSpeedPerLevel">Attack Speed Per Level</label>
+                    <input type="number" class="form-control" name="attackSpeedPerLevel" id="field_attackSpeedPerLevel"
+                        [(ngModel)]="champion.attackSpeedPerLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceFirstType" for="field_resourceFirstType">Resource First Type</label>
+                    <select class="form-control" name="resourceFirstType" [(ngModel)]="champion.resourceFirstType" id="field_resourceFirstType" >
+                        <option value="HEALTH">{{'championSelectApp.ChampionResourceType.HEALTH' | translate}}</option>
+                        <option value="MANA">{{'championSelectApp.ChampionResourceType.MANA' | translate}}</option>
+                        <option value="ENERGY">{{'championSelectApp.ChampionResourceType.ENERGY' | translate}}</option>
+                        <option value="BATTLEFURY">{{'championSelectApp.ChampionResourceType.BATTLEFURY' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceSecondType" for="field_resourceSecondType">Resource Second Type</label>
+                    <select class="form-control" name="resourceSecondType" [(ngModel)]="champion.resourceSecondType" id="field_resourceSecondType" >
+                        <option value="HEALTH">{{'championSelectApp.ChampionResourceType.HEALTH' | translate}}</option>
+                        <option value="MANA">{{'championSelectApp.ChampionResourceType.MANA' | translate}}</option>
+                        <option value="ENERGY">{{'championSelectApp.ChampionResourceType.ENERGY' | translate}}</option>
+                        <option value="BATTLEFURY">{{'championSelectApp.ChampionResourceType.BATTLEFURY' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceFirstPoolFlat" for="field_resourceFirstPoolFlat">Resource First Pool Flat</label>
+                    <input type="number" class="form-control" name="resourceFirstPoolFlat" id="field_resourceFirstPoolFlat"
+                        [(ngModel)]="champion.resourceFirstPoolFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceFirstPoolPerLevel" for="field_resourceFirstPoolPerLevel">Resource First Pool Per Level</label>
+                    <input type="number" class="form-control" name="resourceFirstPoolPerLevel" id="field_resourceFirstPoolPerLevel"
+                        [(ngModel)]="champion.resourceFirstPoolPerLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceFirstRegenerationFlat" for="field_resourceFirstRegenerationFlat">Resource First Regeneration Flat</label>
+                    <input type="number" class="form-control" name="resourceFirstRegenerationFlat" id="field_resourceFirstRegenerationFlat"
+                        [(ngModel)]="champion.resourceFirstRegenerationFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceFirstRegenerationPerLevel" for="field_resourceFirstRegenerationPerLevel">Resource First Regeneration Per Level</label>
+                    <input type="number" class="form-control" name="resourceFirstRegenerationPerLevel" id="field_resourceFirstRegenerationPerLevel"
+                        [(ngModel)]="champion.resourceFirstRegenerationPerLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceSecondPoolFlat" for="field_resourceSecondPoolFlat">Resource Second Pool Flat</label>
+                    <input type="number" class="form-control" name="resourceSecondPoolFlat" id="field_resourceSecondPoolFlat"
+                        [(ngModel)]="champion.resourceSecondPoolFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceSecondPoolPerLevel" for="field_resourceSecondPoolPerLevel">Resource Second Pool Per Level</label>
+                    <input type="number" class="form-control" name="resourceSecondPoolPerLevel" id="field_resourceSecondPoolPerLevel"
+                        [(ngModel)]="champion.resourceSecondPoolPerLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceSecondRegenerationFlat" for="field_resourceSecondRegenerationFlat">Resource Second Regeneration Flat</label>
+                    <input type="number" class="form-control" name="resourceSecondRegenerationFlat" id="field_resourceSecondRegenerationFlat"
+                        [(ngModel)]="champion.resourceSecondRegenerationFlat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.champion.resourceSecondRegenerationPerLevel" for="field_resourceSecondRegenerationPerLevel">Resource Second Regeneration Per Level</label>
+                    <input type="number" class="form-control" name="resourceSecondRegenerationPerLevel" id="field_resourceSecondRegenerationPerLevel"
+                        [(ngModel)]="champion.resourceSecondRegenerationPerLevel" />
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="championSelectApp.champion.tags" for="field_tags">Tags</label>
+                    <select class="form-control" id="field_tags" multiple name="tags" [(ngModel)]="champion.tags">
+                        <option [ngValue]="getSelected(champion.tags, championTagOption)" *ngFor="let championTagOption of championtags; trackBy: trackChampionTagById">{{championTagOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+    "championSelectApp": {
+        "ChampionTagValue" : {
+            "null": "",
+            "FIGHTER": "FIGHTER",
+            "TANK": "TANK",
+            "MAGE": "MAGE",
+            "ASSASSIN": "ASSASSIN"
+        }
+    }
+}

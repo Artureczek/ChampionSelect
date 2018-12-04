@@ -1,0 +1,31 @@
+{
+    "name": "ChampionTag",
+    "fields": [
+        {
+            "fieldName": "tag",
+            "fieldType": "ChampionTagValue",
+            "fieldValues": "FIGHTER,TANK,MAGE,ASSASSIN",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "champions",
+            "otherEntityName": "champion",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "tags"
+        }
+    ],
+    "changelogDate": "20181204173223",
+    "entityTableName": "champion_tag",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

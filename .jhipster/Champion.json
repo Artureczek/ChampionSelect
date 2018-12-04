@@ -1,0 +1,168 @@
+{
+    "name": "Champion",
+    "fields": [
+        {
+            "fieldName": "internalVersion",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastModified",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "riotId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "riotKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "blurb",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "attack",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "defence",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "magic",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "difficulty",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "movementSpeed",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "attackRange",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "armorFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "armorPerLevel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "spellBlockFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "spellBlockPerLevel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "criticalFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "criticalPerLevel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "attackDamageFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "attackDamagePerLevel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "attackSpeedFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "attackSpeedPerLevel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "resourceFirstType",
+            "fieldType": "ChampionResourceType",
+            "fieldValues": "HEALTH,MANA,ENERGY,BATTLEFURY"
+        },
+        {
+            "fieldName": "resourceSecondType",
+            "fieldType": "ChampionResourceType",
+            "fieldValues": "HEALTH,MANA,ENERGY,BATTLEFURY"
+        },
+        {
+            "fieldName": "resourceFirstPoolFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "resourceFirstPoolPerLevel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "resourceFirstRegenerationFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "resourceFirstRegenerationPerLevel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "resourceSecondPoolFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "resourceSecondPoolPerLevel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "resourceSecondRegenerationFlat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "resourceSecondRegenerationPerLevel",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "champions",
+            "relationshipName": "tags",
+            "otherEntityName": "championTag",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20181204173224",
+    "entityTableName": "champion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
