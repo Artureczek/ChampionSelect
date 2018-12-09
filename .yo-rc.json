@@ -33,6 +33,7 @@
     "languages": [
       "en",
       "pl"
-    ]
+    ],
+    "skipCheckLengthOfIdentifier": true
   }
 }
