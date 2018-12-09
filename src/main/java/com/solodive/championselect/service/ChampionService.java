@@ -91,7 +91,14 @@ public class ChampionService {
         championRepository.deleteById(id);
     }
 
+    /**
+     * Map and save a riotChampionDTO as Champion.
+     *
+     * @param riotChampionDTO the entity to map and save as Champion
+     * @return the persisted Champion entity
+     */
     public Champion save(RiotChampionDTO riotChampionDTO) {
+        log.debug("Request to map and save RiotChampionDTO as Champion : {}", riotChampionDTO);
         if (riotChampionDTO != null) {
             return championRepository.save(
                 attachTags(
@@ -103,7 +110,14 @@ public class ChampionService {
         return null;
     }
 
+    /**
+     * Map and save a list of riotChampionDTOs as list of Champions.
+     *
+     * @param riotChampionDTOList list of entities to map and save as list of Champions
+     * @return the persisted list of Champion entities
+     */
     public List<Champion> save(List<RiotChampionDTO> riotChampionDTOList) {
+        log.debug("Request to map and save list of RiotChampionDTOs as Champions : {}", riotChampionDTOList);
         if (riotChampionDTOList != null && riotChampionDTOList.size() > 0) {
             return championRepository.saveAll(
                 riotChampionDTOList

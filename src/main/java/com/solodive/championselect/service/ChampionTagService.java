@@ -34,7 +34,8 @@ public class ChampionTagService {
      * @return the persisted entity
      */
     public ChampionTag save(ChampionTag championTag) {
-        log.debug("Request to save ChampionTag : {}", championTag);        return championTagRepository.save(championTag);
+        log.debug("Request to save ChampionTag : {}", championTag);
+        return championTagRepository.save(championTag);
     }
 
     /**
@@ -71,13 +72,27 @@ public class ChampionTagService {
         championTagRepository.deleteById(id);
     }
 
+    /**
+     * Get one championTag by championTagValue.
+     *
+     * @param championTagValue the championTagValue of the entity
+     * @return the entity
+     */
     @Transactional(readOnly = true)
-    public Optional<ChampionTag> dindByTag(ChampionTagValue championTagValue) {
+    public Optional<ChampionTag> findByTag(ChampionTagValue championTagValue) {
+        log.debug("Request to get ChampionTag : {}", championTagValue);
         return championTagRepository.findByTag(championTagValue);
     }
 
+    /**
+     * Get list of championTags by list of championTagValues.
+     *
+     * @param championTagValueList the list of championTagValues of the entities
+     * @return the list of entities
+     */
     @Transactional(readOnly = true)
     public List<ChampionTag> findByTagIn(List<ChampionTagValue> championTagValueList) {
+        log.debug("Request to get list of ChampionTags : {}", championTagValueList);
         return championTagRepository.findByTagIn(championTagValueList);
     }
 
