@@ -1,0 +1,11 @@
+{
+    "championSelectApp": {
+        "ChampionResourceType" : {
+            "null": "",
+            "HEALTH": "HEALTH",
+            "MANA": "MANA",
+            "ENERGY": "ENERGY",
+            "BATTLEFURY": "BATTLEFURY"
+        }
+    }
+}

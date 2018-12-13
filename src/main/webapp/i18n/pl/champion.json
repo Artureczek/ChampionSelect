@@ -1,0 +1,56 @@
+
+{
+    "championSelectApp": {
+        "champion" : {
+            "home": {
+                "title": "Champion",
+                "createLabel": "Dodaj Champion",
+                "createOrEditLabel": "Dodaj lub edytuj: Champion"
+            },
+            "created": "Utworzono nowy obiekt typu Champion z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Champion z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Champion z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Champion {{ id }}?"
+            },
+            "detail": {
+                "title": "Champion"
+            },
+            "internalVersion": "Internal Version",
+            "lastModified": "Last Modified",
+            "riotId": "Riot Id",
+            "riotKey": "Riot Key",
+            "version": "Version",
+            "name": "Name",
+            "title": "Title",
+            "blurb": "Blurb",
+            "attack": "Attack",
+            "defence": "Defence",
+            "magic": "Magic",
+            "difficulty": "Difficulty",
+            "movementSpeed": "Movement Speed",
+            "attackRange": "Attack Range",
+            "armorFlat": "Armor Flat",
+            "armorPerLevel": "Armor Per Level",
+            "spellBlockFlat": "Spell Block Flat",
+            "spellBlockPerLevel": "Spell Block Per Level",
+            "criticalFlat": "Critical Flat",
+            "criticalPerLevel": "Critical Per Level",
+            "attackDamageFlat": "Attack Damage Flat",
+            "attackDamagePerLevel": "Attack Damage Per Level",
+            "attackSpeedFlat": "Attack Speed Flat",
+            "attackSpeedPerLevel": "Attack Speed Per Level",
+            "resourceFirstType": "Resource First Type",
+            "resourceSecondType": "Resource Second Type",
+            "resourceFirstPoolFlat": "Resource First Pool Flat",
+            "resourceFirstPoolPerLevel": "Resource First Pool Per Level",
+            "resourceFirstRegenerationFlat": "Resource First Regeneration Flat",
+            "resourceFirstRegenerationPerLevel": "Resource First Regeneration Per Level",
+            "resourceSecondPoolFlat": "Resource Second Pool Flat",
+            "resourceSecondPoolPerLevel": "Resource Second Pool Per Level",
+            "resourceSecondRegenerationFlat": "Resource Second Regeneration Flat",
+            "resourceSecondRegenerationPerLevel": "Resource Second Regeneration Per Level",
+            "tags": "Tags"
+        }
+    }
+}
