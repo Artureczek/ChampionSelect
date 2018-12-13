@@ -1,10 +1,9 @@
 .parent {
-    width: 100%;
+    display: block;
 }
 
 .child {
-    position: fixed;
-    z-index: 100;
-    top: 8%;
-    margin: 0 auto;
+    position: relative;
+    display: block;
+    top: 100px;
 }
