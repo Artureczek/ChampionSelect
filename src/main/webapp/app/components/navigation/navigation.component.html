@@ -1,0 +1,17 @@
+<div>
+    <img src="../../../content/images/os.png" style="position: absolute;z-index:1000;">
+    <a (click)="getFirstDotUrl()" id="firstDot">
+        <img [src]="getFirstDotImageUrl()" style="position: absolute;z-index:1000;left:320px;top:-5px">
+    </a>
+    <label class="font-small left-label" id="firstLabel">{{firstDotLabel}}</label>
+
+    <a (click)="getSecondDotUrl()" id="secondDot">
+        <img [src]="getSecondDotImageUrl()" style="position: absolute;z-index:1000;left:580px;top:-5px">
+    </a>
+    <label class="font-small middle-label" id="secondLabel">{{secondDotLabel}}</label>
+
+    <a (click)="getThirdDotUrl()" id="thirdDot">
+        <img [src]="getThirdDotImageUrl()" style="position: absolute;z-index:1000;left:840px;top:-5px">
+    </a>
+    <label class="font-small right-label" id="thirdLabel">{{thirdDotLabel}}</label>
+</div>

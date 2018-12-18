@@ -1,0 +1,69 @@
+.custom-navbar {
+    top: 50%;
+    left: 50%;
+}
+
+img.navbar1 {
+    position: absolute;
+    font-size: 29px;
+}
+
+.font-small {
+    font-family: Cormorant, Times, serif;
+    font-size: 11px;
+    font-weight: light;
+    color: #ffe4b2;
+
+    position: absolute;
+    z-index: 1000;
+    top: 15px;
+}
+
+.left-label {
+    left: 315px;
+}
+.middle-label {
+    left: 575px;
+}
+.right-label {
+    left: 830px;
+}
+
+#firstLabel {
+    -webkit-transition: opacity 0.55s ease-in-out;
+    -moz-transition: opacity 0.55s ease-in-out;
+    -ms-transition: opacity 0.55s ease-in-out;
+    -o-transition: opacity 0.55s ease-in-out;
+    transition: opacity 0.55s ease-in-out;
+    opacity: 0;
+}
+
+#firstDot:hover + #firstLabel {
+    opacity: 1;
+}
+
+#secondLabel {
+    -webkit-transition: opacity 0.55s ease-in-out;
+    -moz-transition: opacity 0.55s ease-in-out;
+    -ms-transition: opacity 0.55s ease-in-out;
+    -o-transition: opacity 0.55s ease-in-out;
+    transition: opacity 0.55s ease-in-out;
+    opacity: 0;
+}
+
+#secondDot:hover + #secondLabel {
+    opacity: 1;
+}
+
+#thirdLabel {
+    -webkit-transition: opacity 0.55s ease-in-out;
+    -moz-transition: opacity 0.55s ease-in-out;
+    -ms-transition: opacity 0.55s ease-in-out;
+    -o-transition: opacity 0.55s ease-in-out;
+    transition: opacity 0.55s ease-in-out;
+    opacity: 0;
+}
+
+#thirdDot:hover + #thirdLabel {
+    opacity: 1;
+}

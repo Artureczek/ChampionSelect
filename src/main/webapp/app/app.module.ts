@@ -20,7 +20,7 @@ import { ChampionSelectEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
-import { ChoiceCardComponent } from './components/choice-card/choice-card.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
     imports: [
@@ -34,7 +34,7 @@ import { ChoiceCardComponent } from './components/choice-card/choice-card.compon
         ChampionSelectEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, ActiveMenuDirective, FooterComponent, ChoiceCardComponent],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, ActiveMenuDirective, FooterComponent, NavigationComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
