@@ -29,7 +29,9 @@ img.navbar1 {
     left: 830px;
 }
 
-#firstLabel {
+#firstLabel,
+#secondLabel,
+#thirdLabel {
     -webkit-transition: opacity 0.55s ease-in-out;
     -moz-transition: opacity 0.55s ease-in-out;
     -ms-transition: opacity 0.55s ease-in-out;
@@ -42,26 +44,8 @@ img.navbar1 {
     opacity: 1;
 }
 
-#secondLabel {
-    -webkit-transition: opacity 0.55s ease-in-out;
-    -moz-transition: opacity 0.55s ease-in-out;
-    -ms-transition: opacity 0.55s ease-in-out;
-    -o-transition: opacity 0.55s ease-in-out;
-    transition: opacity 0.55s ease-in-out;
-    opacity: 0;
-}
-
 #secondDot:hover + #secondLabel {
     opacity: 1;
-}
-
-#thirdLabel {
-    -webkit-transition: opacity 0.55s ease-in-out;
-    -moz-transition: opacity 0.55s ease-in-out;
-    -ms-transition: opacity 0.55s ease-in-out;
-    -o-transition: opacity 0.55s ease-in-out;
-    transition: opacity 0.55s ease-in-out;
-    opacity: 0;
 }
 
 #thirdDot:hover + #thirdLabel {
