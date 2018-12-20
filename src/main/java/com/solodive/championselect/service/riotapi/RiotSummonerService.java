@@ -11,12 +11,16 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 @Service
 public class SummonerService {
     private final Logger log = LoggerFactory.getLogger(SummonerService.class);
+
 
     @Autowired
     private RestTemplate restTemplate;
@@ -41,6 +45,7 @@ public class SummonerService {
 
     @Value("${riotapi.match-by-id-url}")
     private String matchByIdUrl;
+
 
     private URI getUrl(String url, String parameter){
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(baseUrl + url);
