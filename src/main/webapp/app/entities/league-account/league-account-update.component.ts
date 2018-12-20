@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
+import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 
 import { ILeagueAccount } from 'app/shared/model/league-account.model';
 import { LeagueAccountService } from './league-account.service';
@@ -13,7 +15,7 @@ import { LeagueAccountService } from './league-account.service';
 export class LeagueAccountUpdateComponent implements OnInit {
     private _leagueAccount: ILeagueAccount;
     isSaving: boolean;
-    lastUpdateDp: any;
+    lastUpdate: string;
 
     constructor(private leagueAccountService: LeagueAccountService, private activatedRoute: ActivatedRoute) {}
 
@@ -30,6 +32,7 @@ export class LeagueAccountUpdateComponent implements OnInit {
 
     save() {
         this.isSaving = true;
+        this.leagueAccount.lastUpdate = moment(this.lastUpdate, DATE_TIME_FORMAT);
         if (this.leagueAccount.id !== undefined) {
             this.subscribeToSaveResponse(this.leagueAccountService.update(this.leagueAccount));
         } else {
@@ -55,5 +58,6 @@ export class LeagueAccountUpdateComponent implements OnInit {
 
     set leagueAccount(leagueAccount: ILeagueAccount) {
         this._leagueAccount = leagueAccount;
+        this.lastUpdate = moment(leagueAccount.lastUpdate).format(DATE_TIME_FORMAT);
     }
 }

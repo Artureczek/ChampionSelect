@@ -85,20 +85,14 @@ public class SoloMemberResource {
      * GET  /solo-members : get all the soloMembers.
      *
      * @param pageable the pagination information
-     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many)
      * @return the ResponseEntity with status 200 (OK) and the list of soloMembers in body
      */
     @GetMapping("/solo-members")
     @Timed
-    public ResponseEntity<List<SoloMember>> getAllSoloMembers(Pageable pageable, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
+    public ResponseEntity<List<SoloMember>> getAllSoloMembers(Pageable pageable) {
         log.debug("REST request to get a page of SoloMembers");
-        Page<SoloMember> page;
-        if (eagerload) {
-            page = soloMemberService.findAllWithEagerRelationships(pageable);
-        } else {
-            page = soloMemberService.findAll(pageable);
-        }
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, String.format("/api/solo-members?eagerload=%b", eagerload));
+        Page<SoloMember> page = soloMemberService.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/solo-members");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 

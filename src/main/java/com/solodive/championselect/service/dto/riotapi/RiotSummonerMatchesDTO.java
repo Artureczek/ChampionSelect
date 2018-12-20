@@ -1,5 +1,7 @@
 package com.solodive.championselect.service.dto.riotapi;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ public class RiotSummonerMatchesDTO {
     private Long totalGames;
     private Long startIndex;
     private Long endIndex;
+    @JsonProperty("matches")
     private List<RiotMatchDTO> riotMatchDTOS = new ArrayList<>();
 
     public Long getTotalGames() {

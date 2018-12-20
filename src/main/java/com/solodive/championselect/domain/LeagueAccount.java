@@ -1,14 +1,14 @@
 package com.solodive.championselect.domain;
 
-import com.solodive.championselect.service.dto.riotapi.ExtendedSummoner;
-import com.solodive.championselect.service.dto.riotapi.SummonerRank;
+import com.solodive.championselect.service.dto.riotapi.RiotExtendedSummonerDTO;
+import com.solodive.championselect.service.dto.riotapi.RiotSummonerRankDTO;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.Instant;
 import java.util.Objects;
 
 import com.solodive.championselect.domain.enumeration.Server;
@@ -60,29 +60,7 @@ public class LeagueAccount implements Serializable {
     private Boolean latest;
 
     @Column(name = "last_update")
-    private LocalDate lastUpdate;
-
-    public LeagueAccount() {
-    }
-
-    public LeagueAccount(ExtendedSummoner extendedSummoner) {
-        SummonerRank soloQ = new SummonerRank();
-        for (SummonerRank summonerRank : extendedSummoner.getSummonerRank()) {
-            if (summonerRank.getQueueType().equals("RANKED_SOLO_5x5")) {
-                soloQ = summonerRank;
-            }
-        }
-        this.summonersId = extendedSummoner.getBasicSummoner().getAccountId();
-        this.division = Division.valueOf(soloQ.getRank());
-        this.tier = Tier.valueOf(soloQ.getTier());
-        //not present in API??
-        this.level = null;
-        this.lastUpdate = LocalDate.now();
-        this.latest = true;
-        this.name = extendedSummoner.getBasicSummoner().getName();
-        this.lp = soloQ.getLeaguePoints();
-        this.server = Server.EUNE;
-    }
+    private Instant lastUpdate;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -100,6 +78,29 @@ public class LeagueAccount implements Serializable {
     public LeagueAccount summonersId(Long summonersId) {
         this.summonersId = summonersId;
         return this;
+    }
+
+    public LeagueAccount() {
+
+    }
+
+    public LeagueAccount(RiotExtendedSummonerDTO extendedSummoner) {
+        RiotSummonerRankDTO soloQ = new RiotSummonerRankDTO();
+        for (RiotSummonerRankDTO summonerRank : extendedSummoner.getRiotSummonerRankDTO()) {
+            if (summonerRank.getQueueType().equals("RANKED_SOLO_5x5")) {
+                soloQ = summonerRank;
+            }
+        }
+        this.summonersId = extendedSummoner.getRiotBasicSummonerDTO().getId();
+        this.division = Division.valueOf(soloQ.getTier().toUpperCase());
+        this.tier = Tier.valueOf(soloQ.getRank().toUpperCase());
+        //not present in API??
+        this.level = null;
+        this.lastUpdate = Instant.now();
+        this.latest = true;
+        this.name = extendedSummoner.getRiotBasicSummonerDTO().getName();
+        this.lp = soloQ.getLeaguePoints();
+        this.server = Server.EUNE;
     }
 
     public void setSummonersId(Long summonersId) {
@@ -197,16 +198,16 @@ public class LeagueAccount implements Serializable {
         this.latest = latest;
     }
 
-    public LocalDate getLastUpdate() {
+    public Instant getLastUpdate() {
         return lastUpdate;
     }
 
-    public LeagueAccount lastUpdate(LocalDate lastUpdate) {
+    public LeagueAccount lastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;
         return this;
     }
 
-    public void setLastUpdate(LocalDate lastUpdate) {
+    public void setLastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove

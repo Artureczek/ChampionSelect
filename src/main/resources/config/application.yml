@@ -104,7 +104,7 @@ logging:
 
 
 riotapi:
-        api-key: RGAPI-83ca4047-1877-4489-874c-49b36c87ce1b
+        api-key: RGAPI-3895dbd7-1522-44e9-b9d6-1dff839d8295
 
         base-url: https://eun1.api.riotgames.com/lol/
         summoner-by-name-url: summoner/v3/summoners/by-name/{parameter}?api_key={api-key}

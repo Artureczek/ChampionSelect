@@ -1,4 +1,4 @@
-import { ISoloMember } from 'app/shared/model//solo-member.model';
+import { IMostPlayed } from 'app/shared/model//most-played.model';
 
 export interface IChampion {
     id?: number;
@@ -8,7 +8,7 @@ export interface IChampion {
     name?: string;
     title?: string;
     blurb?: string;
-    members?: ISoloMember[];
+    champions?: IMostPlayed[];
 }
 
 export class Champion implements IChampion {
@@ -20,6 +20,6 @@ export class Champion implements IChampion {
         public name?: string,
         public title?: string,
         public blurb?: string,
-        public members?: ISoloMember[]
+        public champions?: IMostPlayed[]
     ) {}
 }

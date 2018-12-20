@@ -1,9 +1,7 @@
 package com.solodive.championselect.service;
 
-import com.solodive.championselect.domain.LeagueAccount;
 import com.solodive.championselect.domain.SoloMember;
 import com.solodive.championselect.repository.SoloMemberRepository;
-import com.solodive.championselect.service.dto.riotapi.ExtendedSummoner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,15 +49,6 @@ public class SoloMemberService {
         return soloMemberRepository.findAll(pageable);
     }
 
-    /**
-     * Get all the SoloMember with eager load of many-to-many relationships.
-     *
-     * @return the list of entities
-     */
-    public Page<SoloMember> findAllWithEagerRelationships(Pageable pageable) {
-        return soloMemberRepository.findAllWithEagerRelationships(pageable);
-    }
-
 
     /**
      * Get one soloMember by id.
@@ -70,8 +59,9 @@ public class SoloMemberService {
     @Transactional(readOnly = true)
     public Optional<SoloMember> findOne(Long id) {
         log.debug("Request to get SoloMember : {}", id);
-        return soloMemberRepository.findOneWithEagerRelationships(id);
+        return soloMemberRepository.findById(id);
     }
+
 
     /**
      * Delete the soloMember by id.

@@ -8,8 +8,6 @@ import { ISoloMember } from 'app/shared/model/solo-member.model';
 import { SoloMemberService } from './solo-member.service';
 import { ILeagueAccount } from 'app/shared/model/league-account.model';
 import { LeagueAccountService } from 'app/entities/league-account';
-import { IChampion } from 'app/shared/model/champion.model';
-import { ChampionService } from 'app/entities/champion';
 
 @Component({
     selector: 'jhi-solo-member-update',
@@ -21,15 +19,10 @@ export class SoloMemberUpdateComponent implements OnInit {
 
     accounts: ILeagueAccount[];
 
-    champions: IChampion[];
-
-    solomembers: ISoloMember[];
-
     constructor(
         private jhiAlertService: JhiAlertService,
         private soloMemberService: SoloMemberService,
         private leagueAccountService: LeagueAccountService,
-        private championService: ChampionService,
         private activatedRoute: ActivatedRoute
     ) {}
 
@@ -50,18 +43,6 @@ export class SoloMemberUpdateComponent implements OnInit {
                         (subRes: HttpErrorResponse) => this.onError(subRes.message)
                     );
                 }
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
-        this.championService.query().subscribe(
-            (res: HttpResponse<IChampion[]>) => {
-                this.champions = res.body;
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
-        this.soloMemberService.query().subscribe(
-            (res: HttpResponse<ISoloMember[]>) => {
-                this.solomembers = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -99,25 +80,6 @@ export class SoloMemberUpdateComponent implements OnInit {
 
     trackLeagueAccountById(index: number, item: ILeagueAccount) {
         return item.id;
-    }
-
-    trackChampionById(index: number, item: IChampion) {
-        return item.id;
-    }
-
-    trackSoloMemberById(index: number, item: ISoloMember) {
-        return item.id;
-    }
-
-    getSelected(selectedVals: Array<any>, option: any) {
-        if (selectedVals) {
-            for (let i = 0; i < selectedVals.length; i++) {
-                if (option.id === selectedVals[i].id) {
-                    return selectedVals[i];
-                }
-            }
-        }
-        return option;
     }
     get soloMember() {
         return this._soloMember;

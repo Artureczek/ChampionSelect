@@ -18,8 +18,8 @@ import java.util.Map;
 
 
 @Service
-public class SummonerService {
-    private final Logger log = LoggerFactory.getLogger(SummonerService.class);
+public class RiotSummonerService {
+    private final Logger log = LoggerFactory.getLogger(RiotSummonerService.class);
 
 
     @Autowired

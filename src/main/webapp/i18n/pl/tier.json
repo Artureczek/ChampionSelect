@@ -2,11 +2,11 @@
     "championSelectApp": {
         "Tier" : {
             "null": "",
-            "One": "One",
-            "Two": "Two",
-            "Three": "Three",
-            "Four": "Four",
-            "Five": "Five",
+            "I": "I",
+            "II": "II",
+            "III": "III",
+            "IV": "IV",
+            "V": "V",
             "NA": "NA"
         }
     }

@@ -1,0 +1,24 @@
+
+{
+    "championSelectApp": {
+        "memberChamp" : {
+            "home": {
+                "title": "Member Champ",
+                "createLabel": "Dodaj Member Champ",
+                "createOrEditLabel": "Dodaj lub edytuj: Member Champ"
+            },
+            "created": "Utworzono nowy obiekt typu Member Champ z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Member Champ z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Member Champ z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Member Champ {{ id }}?"
+            },
+            "detail": {
+                "title": "Member Champ"
+            },
+            "timesPlayed": "Times Played",
+            "member": "Member",
+            "champion": "Champion"
+        }
+    }
+}

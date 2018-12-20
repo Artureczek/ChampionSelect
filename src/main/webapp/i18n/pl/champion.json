@@ -22,7 +22,7 @@
             "name": "Name",
             "title": "Title",
             "blurb": "Blurb",
-            "member": "Member"
+            "champion": "Champion"
         }
     }
 }

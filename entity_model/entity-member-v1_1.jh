@@ -18,7 +18,7 @@ entity LeagueAccount {
     tier Tier
     lp Long
 	latest Boolean
-    lastUpdate LocalDate
+    lastUpdate Instant
 }
 
  entity Champion {
@@ -31,30 +31,37 @@ entity LeagueAccount {
     blurb String
 }
 
+entity Duos {
+ 	timesPlayed Long
+}
+
+entity MostPlayed {
+ 	timesPlayed Long
+}
+
 relationship OneToOne {
     SoloMember{account} to LeagueAccount
 }
 
 relationship OneToMany {
     SoloMember{quote} to Quote
-}
-
-relationship ManyToMany{
-    SoloMember {mostPlayed} to Champion {member}
-    SoloMember {member} to SoloMember {partner}
+    SoloMember{member} to Duos{member}
+    SoloMember{duo} to Duos{duo}
+    SoloMember{player} to MostPlayed{member}
+    Champion{champion} to MostPlayed{champion}
 }
 
 enum Server {
     EUNE, EUW, NA
 }
 
-enum Division {
-    Iron, Bronze, Silver, Gold, Platinum, Diamond, Master, Grandmaster, Challenger
-}
-
 enum Tier {
-    One, Two, Three, Four, Five, NA
-}
+     IRON, BRONZE, SILVER, GOLD, PLATINUM, DIAMOND, MASTER, GRANDMASTER, CHALLENGER
+ }
 
-service SoloMember, Quote, LeagueAccount, Champion with serviceClass
+ enum Division {
+     I, II, III, IV, V, NA
+ }
+
+service SoloMember, Quote, LeagueAccount, Champion, Duos, MostPlayed with serviceClass
 paginate SoloMember, Quote, LeagueAccount, Champion with infinite-scroll

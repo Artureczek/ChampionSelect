@@ -44,10 +44,9 @@ public class Champion implements Serializable {
     @Column(name = "blurb")
     private String blurb;
 
-    @ManyToMany(mappedBy = "mostPlayeds")
-    @JsonIgnore
+    @OneToMany(mappedBy = "champion")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<SoloMember> members = new HashSet<>();
+    private Set<MostPlayed> champions = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -136,29 +135,29 @@ public class Champion implements Serializable {
         this.blurb = blurb;
     }
 
-    public Set<SoloMember> getMembers() {
-        return members;
+    public Set<MostPlayed> getChampions() {
+        return champions;
     }
 
-    public Champion members(Set<SoloMember> soloMembers) {
-        this.members = soloMembers;
+    public Champion champions(Set<MostPlayed> mostPlayeds) {
+        this.champions = mostPlayeds;
         return this;
     }
 
-    public Champion addMember(SoloMember soloMember) {
-        this.members.add(soloMember);
-        soloMember.getMostPlayeds().add(this);
+    public Champion addChampion(MostPlayed mostPlayed) {
+        this.champions.add(mostPlayed);
+        mostPlayed.setChampion(this);
         return this;
     }
 
-    public Champion removeMember(SoloMember soloMember) {
-        this.members.remove(soloMember);
-        soloMember.getMostPlayeds().remove(this);
+    public Champion removeChampion(MostPlayed mostPlayed) {
+        this.champions.remove(mostPlayed);
+        mostPlayed.setChampion(null);
         return this;
     }
 
-    public void setMembers(Set<SoloMember> soloMembers) {
-        this.members = soloMembers;
+    public void setChampions(Set<MostPlayed> mostPlayeds) {
+        this.champions = mostPlayeds;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

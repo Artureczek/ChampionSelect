@@ -12,6 +12,10 @@
                 "leagueAccount": "League Account",
                 "image": "Image",
                 "champion": "Champion",
+                "memberMember": "Member Member",
+                "memberChamp": "Member Champ",
+                "duos": "Duos",
+                "mostPlayed": "Most Played",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

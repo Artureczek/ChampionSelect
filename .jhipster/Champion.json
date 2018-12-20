@@ -28,11 +28,10 @@
     ],
     "relationships": [
         {
-            "relationshipType": "many-to-many",
-            "relationshipName": "member",
-            "otherEntityName": "soloMember",
-            "ownerSide": false,
-            "otherEntityRelationshipName": "mostPlayed"
+            "relationshipType": "one-to-many",
+            "relationshipName": "champion",
+            "otherEntityName": "mostPlayed",
+            "otherEntityRelationshipName": "champion"
         }
     ],
     "changelogDate": "20181112142333",

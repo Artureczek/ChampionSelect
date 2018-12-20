@@ -34,7 +34,8 @@ public class ChampionService {
      * @return the persisted entity
      */
     public Champion save(Champion champion) {
-        log.debug("Request to save Champion : {}", champion);        return championRepository.save(champion);
+        log.debug("Request to save Champion : {}", champion);
+        return championRepository.save(champion);
     }
 
     /**
@@ -60,6 +61,12 @@ public class ChampionService {
     public Optional<Champion> findOne(Long id) {
         log.debug("Request to get Champion : {}", id);
         return championRepository.findById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<Champion> findOneByRiotKey(Long id) {
+        log.debug("Request to get Champion : {}", id);
+        return championRepository.findFirstByRiotKey(id);
     }
 
     /**

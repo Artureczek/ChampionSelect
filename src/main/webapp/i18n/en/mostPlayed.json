@@ -1,0 +1,24 @@
+
+{
+    "championSelectApp": {
+        "mostPlayed" : {
+            "home": {
+                "title": "Most Playeds",
+                "createLabel": "Create a new Most Played",
+                "createOrEditLabel": "Create or edit a Most Played"
+            },
+            "created": "A new Most Played is created with identifier {{ param }}",
+            "updated": "A Most Played is updated with identifier {{ param }}",
+            "deleted": "A Most Played is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Most Played {{ id }}?"
+            },
+            "detail": {
+                "title": "Most Played"
+            },
+            "timesPlayed": "Times Played",
+            "member": "Member",
+            "champion": "Champion"
+        }
+    }
+}

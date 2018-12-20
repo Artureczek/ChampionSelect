@@ -1,7 +1,7 @@
 import { ILeagueAccount } from 'app/shared/model//league-account.model';
 import { IQuote } from 'app/shared/model//quote.model';
-import { IChampion } from 'app/shared/model//champion.model';
-import { ISoloMember } from 'app/shared/model//solo-member.model';
+import { IDuos } from 'app/shared/model//duos.model';
+import { IMostPlayed } from 'app/shared/model//most-played.model';
 
 export interface ISoloMember {
     id?: number;
@@ -11,9 +11,9 @@ export interface ISoloMember {
     hometown?: string;
     account?: ILeagueAccount;
     quotes?: IQuote[];
-    mostPlayeds?: IChampion[];
-    members?: ISoloMember[];
-    partners?: ISoloMember[];
+    members?: IDuos[];
+    duos?: IDuos[];
+    players?: IMostPlayed[];
 }
 
 export class SoloMember implements ISoloMember {
@@ -25,8 +25,8 @@ export class SoloMember implements ISoloMember {
         public hometown?: string,
         public account?: ILeagueAccount,
         public quotes?: IQuote[],
-        public mostPlayeds?: IChampion[],
-        public members?: ISoloMember[],
-        public partners?: ISoloMember[]
+        public members?: IDuos[],
+        public duos?: IDuos[],
+        public players?: IMostPlayed[]
     ) {}
 }

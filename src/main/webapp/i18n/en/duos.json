@@ -1,0 +1,24 @@
+
+{
+    "championSelectApp": {
+        "duos" : {
+            "home": {
+                "title": "Duos",
+                "createLabel": "Create a new Duos",
+                "createOrEditLabel": "Create or edit a Duos"
+            },
+            "created": "A new Duos is created with identifier {{ param }}",
+            "updated": "A Duos is updated with identifier {{ param }}",
+            "deleted": "A Duos is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Duos {{ id }}?"
+            },
+            "detail": {
+                "title": "Duos"
+            },
+            "timesPlayed": "Times Played",
+            "member": "Member",
+            "duo": "Duo"
+        }
+    }
+}

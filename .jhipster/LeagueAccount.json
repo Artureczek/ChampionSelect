@@ -21,12 +21,12 @@
         {
             "fieldName": "division",
             "fieldType": "Division",
-            "fieldValues": "Iron,Bronze,Silver,Gold,Platinum,Diamond,Master,Grandmaster,Challenger"
+            "fieldValues": "I,II,III,IV,V,NA"
         },
         {
             "fieldName": "tier",
             "fieldType": "Tier",
-            "fieldValues": "One,Two,Three,Four,Five,NA"
+            "fieldValues": "IRON,BRONZE,SILVER,GOLD,PLATINUM,DIAMOND,MASTER,GRANDMASTER,CHALLENGER"
         },
         {
             "fieldName": "lp",
@@ -38,7 +38,7 @@
         },
         {
             "fieldName": "lastUpdate",
-            "fieldType": "LocalDate"
+            "fieldType": "Instant"
         }
     ],
     "relationships": [],

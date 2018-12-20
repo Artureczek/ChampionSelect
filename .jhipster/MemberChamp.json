@@ -1,0 +1,32 @@
+{
+    "name": "MemberChamp",
+    "fields": [
+        {
+            "fieldName": "timesPlayed",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "member",
+            "otherEntityName": "soloMember",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "champion",
+            "otherEntityName": "champion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181210204409",
+    "entityTableName": "member_champ",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

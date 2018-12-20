@@ -22,8 +22,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 
@@ -57,11 +57,11 @@ public class LeagueAccountResourceIntTest {
     private static final Server DEFAULT_SERVER = Server.EUNE;
     private static final Server UPDATED_SERVER = Server.EUW;
 
-    private static final Division DEFAULT_DIVISION = Division.Iron;
-    private static final Division UPDATED_DIVISION = Division.Bronze;
+    private static final Division DEFAULT_DIVISION = Division.IRON;
+    private static final Division UPDATED_DIVISION = Division.BRONZE;
 
-    private static final Tier DEFAULT_TIER = Tier.One;
-    private static final Tier UPDATED_TIER = Tier.Two;
+    private static final Tier DEFAULT_TIER = Tier.I;
+    private static final Tier UPDATED_TIER = Tier.II;
 
     private static final Long DEFAULT_LP = 1L;
     private static final Long UPDATED_LP = 2L;
@@ -69,8 +69,8 @@ public class LeagueAccountResourceIntTest {
     private static final Boolean DEFAULT_LATEST = false;
     private static final Boolean UPDATED_LATEST = true;
 
-    private static final LocalDate DEFAULT_LAST_UPDATE = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_LAST_UPDATE = LocalDate.now(ZoneId.systemDefault());
+    private static final Instant DEFAULT_LAST_UPDATE = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_LAST_UPDATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
     @Autowired
     private LeagueAccountRepository leagueAccountRepository;

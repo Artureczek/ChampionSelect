@@ -7,23 +7,23 @@ export const enum Server {
 }
 
 export const enum Division {
-    Iron = 'Iron',
-    Bronze = 'Bronze',
-    Silver = 'Silver',
-    Gold = 'Gold',
-    Platinum = 'Platinum',
-    Diamond = 'Diamond',
-    Master = 'Master',
-    Grandmaster = 'Grandmaster',
-    Challenger = 'Challenger'
+    IRON = 'IRON',
+    BRONZE = 'BRONZE',
+    SILVER = 'SILVER',
+    GOLD = 'GOLD',
+    PLATINUM = 'PLATINUM',
+    DIAMOND = 'DIAMOND',
+    MASTER = 'MASTER',
+    GRANDMASTER = 'GRANDMASTER',
+    CHALLENGER = 'CHALLENGER'
 }
 
 export const enum Tier {
-    One = 'One',
-    Two = 'Two',
-    Three = 'Three',
-    Four = 'Four',
-    Five = 'Five',
+    I = 'I',
+    II = 'II',
+    III = 'III',
+    IV = 'IV',
+    V = 'V',
     NA = 'NA'
 }
 

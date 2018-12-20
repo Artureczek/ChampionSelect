@@ -1,0 +1,24 @@
+
+{
+    "championSelectApp": {
+        "memberMember" : {
+            "home": {
+                "title": "Member Members",
+                "createLabel": "Create a new Member Member",
+                "createOrEditLabel": "Create or edit a Member Member"
+            },
+            "created": "A new Member Member is created with identifier {{ param }}",
+            "updated": "A Member Member is updated with identifier {{ param }}",
+            "deleted": "A Member Member is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Member Member {{ id }}?"
+            },
+            "detail": {
+                "title": "Member Member"
+            },
+            "timesPlayed": "Times Played",
+            "member": "Member",
+            "duo": "Duo"
+        }
+    }
+}

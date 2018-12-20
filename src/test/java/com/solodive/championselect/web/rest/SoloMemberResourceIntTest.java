@@ -10,12 +10,9 @@ import com.solodive.championselect.web.rest.errors.ExceptionTranslator;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -25,14 +22,12 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.List;
 
 
 import static com.solodive.championselect.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
-import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -59,14 +54,7 @@ public class SoloMemberResourceIntTest {
 
     @Autowired
     private SoloMemberRepository soloMemberRepository;
-
-    @Mock
-    private SoloMemberRepository soloMemberRepositoryMock;
     
-
-    @Mock
-    private SoloMemberService soloMemberServiceMock;
-
     @Autowired
     private SoloMemberService soloMemberService;
 
@@ -174,37 +162,6 @@ public class SoloMemberResourceIntTest {
             .andExpect(jsonPath("$.[*].hometown").value(hasItem(DEFAULT_HOMETOWN.toString())));
     }
     
-    public void getAllSoloMembersWithEagerRelationshipsIsEnabled() throws Exception {
-        SoloMemberResource soloMemberResource = new SoloMemberResource(soloMemberServiceMock);
-        when(soloMemberServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        MockMvc restSoloMemberMockMvc = MockMvcBuilders.standaloneSetup(soloMemberResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
-
-        restSoloMemberMockMvc.perform(get("/api/solo-members?eagerload=true"))
-        .andExpect(status().isOk());
-
-        verify(soloMemberServiceMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
-    public void getAllSoloMembersWithEagerRelationshipsIsNotEnabled() throws Exception {
-        SoloMemberResource soloMemberResource = new SoloMemberResource(soloMemberServiceMock);
-            when(soloMemberServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-            MockMvc restSoloMemberMockMvc = MockMvcBuilders.standaloneSetup(soloMemberResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
-
-        restSoloMemberMockMvc.perform(get("/api/solo-members?eagerload=true"))
-        .andExpect(status().isOk());
-
-            verify(soloMemberServiceMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
     @Test
     @Transactional
     public void getSoloMember() throws Exception {

@@ -46,24 +46,17 @@ public class SoloMember implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Quote> quotes = new HashSet<>();
 
-    @ManyToMany
+    @OneToMany(mappedBy = "member")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "solo_member_most_played",
-               joinColumns = @JoinColumn(name = "solo_members_id", referencedColumnName = "id"),
-               inverseJoinColumns = @JoinColumn(name = "most_playeds_id", referencedColumnName = "id"))
-    private Set<Champion> mostPlayeds = new HashSet<>();
+    private Set<Duos> members = new HashSet<>();
 
-    @ManyToMany
+    @OneToMany(mappedBy = "duo")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "solo_member_member",
-               joinColumns = @JoinColumn(name = "solo_members_id", referencedColumnName = "id"),
-               inverseJoinColumns = @JoinColumn(name = "members_id", referencedColumnName = "id"))
-    private Set<SoloMember> members = new HashSet<>();
+    private Set<Duos> duos = new HashSet<>();
 
-    @ManyToMany(mappedBy = "members")
-    @JsonIgnore
+    @OneToMany(mappedBy = "member")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<SoloMember> partners = new HashSet<>();
+    private Set<MostPlayed> players = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -164,79 +157,79 @@ public class SoloMember implements Serializable {
         this.quotes = quotes;
     }
 
-    public Set<Champion> getMostPlayeds() {
-        return mostPlayeds;
-    }
-
-    public SoloMember mostPlayeds(Set<Champion> champions) {
-        this.mostPlayeds = champions;
-        return this;
-    }
-
-    public SoloMember addMostPlayed(Champion champion) {
-        this.mostPlayeds.add(champion);
-        champion.getMembers().add(this);
-        return this;
-    }
-
-    public SoloMember removeMostPlayed(Champion champion) {
-        this.mostPlayeds.remove(champion);
-        champion.getMembers().remove(this);
-        return this;
-    }
-
-    public void setMostPlayeds(Set<Champion> champions) {
-        this.mostPlayeds = champions;
-    }
-
-    public Set<SoloMember> getMembers() {
+    public Set<Duos> getMembers() {
         return members;
     }
 
-    public SoloMember members(Set<SoloMember> soloMembers) {
-        this.members = soloMembers;
+    public SoloMember members(Set<Duos> duos) {
+        this.members = duos;
         return this;
     }
 
-    public SoloMember addMember(SoloMember soloMember) {
-        this.members.add(soloMember);
-        soloMember.getPartners().add(this);
+    public SoloMember addMember(Duos duos) {
+        this.members.add(duos);
+        duos.setMember(this);
         return this;
     }
 
-    public SoloMember removeMember(SoloMember soloMember) {
-        this.members.remove(soloMember);
-        soloMember.getPartners().remove(this);
+    public SoloMember removeMember(Duos duos) {
+        this.members.remove(duos);
+        duos.setMember(null);
         return this;
     }
 
-    public void setMembers(Set<SoloMember> soloMembers) {
-        this.members = soloMembers;
+    public void setMembers(Set<Duos> duos) {
+        this.members = duos;
     }
 
-    public Set<SoloMember> getPartners() {
-        return partners;
+    public Set<Duos> getDuos() {
+        return duos;
     }
 
-    public SoloMember partners(Set<SoloMember> soloMembers) {
-        this.partners = soloMembers;
+    public SoloMember duos(Set<Duos> duos) {
+        this.duos = duos;
         return this;
     }
 
-    public SoloMember addPartner(SoloMember soloMember) {
-        this.partners.add(soloMember);
-        soloMember.getMembers().add(this);
+    public SoloMember addDuo(Duos duos) {
+        this.duos.add(duos);
+        duos.setDuo(this);
         return this;
     }
 
-    public SoloMember removePartner(SoloMember soloMember) {
-        this.partners.remove(soloMember);
-        soloMember.getMembers().remove(this);
+    public SoloMember removeDuo(Duos duos) {
+        this.duos.remove(duos);
+        duos.setDuo(null);
         return this;
     }
 
-    public void setPartners(Set<SoloMember> soloMembers) {
-        this.partners = soloMembers;
+    public void setDuos(Set<Duos> duos) {
+        this.duos = duos;
+    }
+
+    public Set<MostPlayed> getPlayers() {
+        return players;
+    }
+
+    public SoloMember players(Set<MostPlayed> mostPlayeds) {
+        this.players = mostPlayeds;
+        return this;
+    }
+
+    public SoloMember addPlayer(MostPlayed mostPlayed) {
+        this.players.add(mostPlayed);
+        mostPlayed.setMember(this);
+        return this;
+    }
+
+    public SoloMember removePlayer(MostPlayed mostPlayed) {
+        this.players.remove(mostPlayed);
+        mostPlayed.setMember(null);
+        return this;
+    }
+
+    public void setPlayers(Set<MostPlayed> mostPlayeds) {
+        this.players = mostPlayeds;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

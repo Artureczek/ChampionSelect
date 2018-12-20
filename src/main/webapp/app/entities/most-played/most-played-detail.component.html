@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mostPlayed">
+            <h2><span jhiTranslate="championSelectApp.mostPlayed.detail.title">Most Played</span> {{mostPlayed.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="championSelectApp.mostPlayed.timesPlayed">Times Played</span></dt>
+                <dd>
+                    <span>{{mostPlayed.timesPlayed}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.mostPlayed.member">Member</span></dt>
+                <dd>
+                    <div *ngIf="mostPlayed.member">
+                        <a [routerLink]="['/solo-member', mostPlayed.member?.id, 'view']">{{mostPlayed.member?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.mostPlayed.champion">Champion</span></dt>
+                <dd>
+                    <div *ngIf="mostPlayed.champion">
+                        <a [routerLink]="['/champion', mostPlayed.champion?.id, 'view']">{{mostPlayed.champion?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/most-played', mostPlayed.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

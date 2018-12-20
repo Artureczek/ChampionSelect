@@ -1,0 +1,24 @@
+
+{
+    "championSelectApp": {
+        "memberMember" : {
+            "home": {
+                "title": "Member Member",
+                "createLabel": "Dodaj Member Member",
+                "createOrEditLabel": "Dodaj lub edytuj: Member Member"
+            },
+            "created": "Utworzono nowy obiekt typu Member Member z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Member Member z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Member Member z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Member Member {{ id }}?"
+            },
+            "detail": {
+                "title": "Member Member"
+            },
+            "timesPlayed": "Times Played",
+            "member": "Member",
+            "duo": "Duo"
+        }
+    }
+}

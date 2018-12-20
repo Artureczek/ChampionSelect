@@ -27,18 +27,6 @@
                         <a [routerLink]="['/league-account', soloMember.account?.id, 'view']">{{soloMember.account?.id}}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="championSelectApp.soloMember.mostPlayed">Most Played</span></dt>
-                <dd>
-                    <span *ngFor="let mostPlayed of soloMember.mostPlayeds; let last = last">
-                        <a [routerLink]="['/champion', mostPlayed?.id, 'view' ]">{{mostPlayed.id}}</a>{{last ? '' : ', '}}
-                    </span>
-                </dd>
-                <dt><span jhiTranslate="championSelectApp.soloMember.member">Member</span></dt>
-                <dd>
-                    <span *ngFor="let member of soloMember.members; let last = last">
-                        <a [routerLink]="['/solo-member', member?.id, 'view' ]">{{member.id}}</a>{{last ? '' : ', '}}
-                    </span>
-                </dd>
             </dl>
 
             <button type="submit"

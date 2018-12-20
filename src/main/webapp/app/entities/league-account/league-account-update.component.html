@@ -35,25 +35,25 @@
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.division" for="field_division">Division</label>
                     <select class="form-control" name="division" [(ngModel)]="leagueAccount.division" id="field_division" >
-                        <option value="Iron">{{'championSelectApp.Division.Iron' | translate}}</option>
-                        <option value="Bronze">{{'championSelectApp.Division.Bronze' | translate}}</option>
-                        <option value="Silver">{{'championSelectApp.Division.Silver' | translate}}</option>
-                        <option value="Gold">{{'championSelectApp.Division.Gold' | translate}}</option>
-                        <option value="Platinum">{{'championSelectApp.Division.Platinum' | translate}}</option>
-                        <option value="Diamond">{{'championSelectApp.Division.Diamond' | translate}}</option>
-                        <option value="Master">{{'championSelectApp.Division.Master' | translate}}</option>
-                        <option value="Grandmaster">{{'championSelectApp.Division.Grandmaster' | translate}}</option>
-                        <option value="Challenger">{{'championSelectApp.Division.Challenger' | translate}}</option>
+                        <option value="IRON">{{'championSelectApp.Division.IRON' | translate}}</option>
+                        <option value="BRONZE">{{'championSelectApp.Division.BRONZE' | translate}}</option>
+                        <option value="SILVER">{{'championSelectApp.Division.SILVER' | translate}}</option>
+                        <option value="GOLD">{{'championSelectApp.Division.GOLD' | translate}}</option>
+                        <option value="PLATINUM">{{'championSelectApp.Division.PLATINUM' | translate}}</option>
+                        <option value="DIAMOND">{{'championSelectApp.Division.DIAMOND' | translate}}</option>
+                        <option value="MASTER">{{'championSelectApp.Division.MASTER' | translate}}</option>
+                        <option value="GRANDMASTER">{{'championSelectApp.Division.GRANDMASTER' | translate}}</option>
+                        <option value="CHALLENGER">{{'championSelectApp.Division.CHALLENGER' | translate}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.tier" for="field_tier">Tier</label>
                     <select class="form-control" name="tier" [(ngModel)]="leagueAccount.tier" id="field_tier" >
-                        <option value="One">{{'championSelectApp.Tier.One' | translate}}</option>
-                        <option value="Two">{{'championSelectApp.Tier.Two' | translate}}</option>
-                        <option value="Three">{{'championSelectApp.Tier.Three' | translate}}</option>
-                        <option value="Four">{{'championSelectApp.Tier.Four' | translate}}</option>
-                        <option value="Five">{{'championSelectApp.Tier.Five' | translate}}</option>
+                        <option value="I">{{'championSelectApp.Tier.I' | translate}}</option>
+                        <option value="II">{{'championSelectApp.Tier.II' | translate}}</option>
+                        <option value="III">{{'championSelectApp.Tier.III' | translate}}</option>
+                        <option value="IV">{{'championSelectApp.Tier.IV' | translate}}</option>
+                        <option value="V">{{'championSelectApp.Tier.V' | translate}}</option>
                         <option value="NA">{{'championSelectApp.Tier.NA' | translate}}</option>
                     </select>
                 </div>
@@ -69,12 +69,9 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.lastUpdate" for="field_lastUpdate">Last Update</label>
-                    <div class="input-group">
-                        <input id="field_lastUpdate" type="text" class="form-control" name="lastUpdate" ngbDatepicker  #lastUpdateDp="ngbDatepicker" [(ngModel)]="leagueAccount.lastUpdate"
+                    <div class="d-flex">
+                        <input id="field_lastUpdate" type="datetime-local" class="form-control" name="lastUpdate" [(ngModel)]="lastUpdate"
                         />
-                        <span class="input-group-append">
-                            <button type="button" class="btn btn-secondary" (click)="lastUpdateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
-                        </span>
                     </div>
                 </div>
 

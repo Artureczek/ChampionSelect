@@ -34,26 +34,21 @@
             "otherEntityRelationshipName": "soloMember"
         },
         {
-            "relationshipType": "many-to-many",
-            "otherEntityRelationshipName": "member",
-            "relationshipName": "mostPlayed",
-            "otherEntityName": "champion",
-            "otherEntityField": "id",
-            "ownerSide": true
-        },
-        {
-            "relationshipType": "many-to-many",
-            "otherEntityRelationshipName": "partner",
+            "relationshipType": "one-to-many",
             "relationshipName": "member",
-            "otherEntityName": "soloMember",
-            "otherEntityField": "id",
-            "ownerSide": true
+            "otherEntityName": "duos",
+            "otherEntityRelationshipName": "member"
         },
         {
-            "relationshipType": "many-to-many",
-            "relationshipName": "partner",
-            "otherEntityName": "soloMember",
-            "ownerSide": false,
+            "relationshipType": "one-to-many",
+            "relationshipName": "duo",
+            "otherEntityName": "duos",
+            "otherEntityRelationshipName": "duo"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "player",
+            "otherEntityName": "mostPlayed",
             "otherEntityRelationshipName": "member"
         }
     ],

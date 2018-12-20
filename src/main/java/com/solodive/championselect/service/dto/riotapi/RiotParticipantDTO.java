@@ -1,5 +1,7 @@
 package com.solodive.championselect.service.dto.riotapi;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class RiotParticipantDTO {
     private Long participantId;
     private Long teamId;
@@ -7,6 +9,7 @@ public class RiotParticipantDTO {
     private Long spell1Id;
     private Long spell2Id;
     private String highestAchievedSeasonTier;
+    @JsonProperty("stats")
     private RiotParticipantStatsDTO riotParticipantStatsDTO;
 
 

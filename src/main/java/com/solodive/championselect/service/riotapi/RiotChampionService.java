@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ChampionService {
-    private final Logger log = LoggerFactory.getLogger(SummonerService.class);
+public class RiotChampionService {
+    private final Logger log = LoggerFactory.getLogger(RiotSummonerService.class);
 
     @Value("${riot-api.data-dragon-url}")
     private String dataDragonUrl;

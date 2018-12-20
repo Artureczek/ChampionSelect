@@ -22,9 +22,9 @@
             "hometown": "Hometown",
             "account": "Account",
             "quote": "Quote",
-            "mostPlayed": "Most Played",
             "member": "Member",
-            "partner": "Partner"
+            "duo": "Duo",
+            "player": "Player"
         }
     }
 }

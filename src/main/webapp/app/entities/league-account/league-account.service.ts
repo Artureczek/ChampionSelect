@@ -51,8 +51,7 @@ export class LeagueAccountService {
 
     private convertDateFromClient(leagueAccount: ILeagueAccount): ILeagueAccount {
         const copy: ILeagueAccount = Object.assign({}, leagueAccount, {
-            lastUpdate:
-                leagueAccount.lastUpdate != null && leagueAccount.lastUpdate.isValid() ? leagueAccount.lastUpdate.format(DATE_FORMAT) : null
+            lastUpdate: leagueAccount.lastUpdate != null && leagueAccount.lastUpdate.isValid() ? leagueAccount.lastUpdate.toJSON() : null
         });
         return copy;
     }

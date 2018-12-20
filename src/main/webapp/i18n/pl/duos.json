@@ -1,0 +1,24 @@
+
+{
+    "championSelectApp": {
+        "duos" : {
+            "home": {
+                "title": "Duos",
+                "createLabel": "Dodaj Duos",
+                "createOrEditLabel": "Dodaj lub edytuj: Duos"
+            },
+            "created": "Utworzono nowy obiekt typu Duos z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Duos z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Duos z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Duos {{ id }}?"
+            },
+            "detail": {
+                "title": "Duos"
+            },
+            "timesPlayed": "Times Played",
+            "member": "Member",
+            "duo": "Duo"
+        }
+    }
+}

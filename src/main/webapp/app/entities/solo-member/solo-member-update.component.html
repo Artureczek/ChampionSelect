@@ -37,18 +37,6 @@
                         <option [ngValue]="leagueAccountOption.id === soloMember.account?.id ? soloMember.account : leagueAccountOption" *ngFor="let leagueAccountOption of accounts; trackBy: trackLeagueAccountById">{{leagueAccountOption.id}}</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label jhiTranslate="championSelectApp.soloMember.mostPlayed" for="field_mostPlayed">Most Played</label>
-                    <select class="form-control" id="field_mostPlayed" multiple name="mostPlayed" [(ngModel)]="soloMember.mostPlayeds">
-                        <option [ngValue]="getSelected(soloMember.mostPlayeds, championOption)" *ngFor="let championOption of champions; trackBy: trackChampionById">{{championOption.id}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label jhiTranslate="championSelectApp.soloMember.member" for="field_member">Member</label>
-                    <select class="form-control" id="field_member" multiple name="member" [(ngModel)]="soloMember.members">
-                        <option [ngValue]="getSelected(soloMember.members, soloMemberOption)" *ngFor="let soloMemberOption of solomembers; trackBy: trackSoloMemberById">{{soloMemberOption.id}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
