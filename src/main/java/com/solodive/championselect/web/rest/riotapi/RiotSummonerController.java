@@ -22,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/riotapi")
-public class SummonerController {
+public class RiotSummonerController {
 
     private final Logger log = LoggerFactory.getLogger(UserResource.class);
     @Autowired
@@ -73,30 +73,6 @@ public class SummonerController {
     @Timed
     public ResponseEntity<RiotExtendedSummonerDTO> getExtendedSummonerById(@PathVariable String id) {
         riotExtendedSummonerDTO = riotSummonerService.getExtendedSummonerById(id);
-        LeagueAccount leagueAccount = leagueAccountService.mapAndSave(riotExtendedSummonerDTO);
-
-        RiotMatchDetailsDTO riotMatchDetailsDTO = getMatchDetailsById("2083767571").getBody();
-        RiotMatchDetailsDTO riotMatchDetailsDTO2 = getMatchDetailsById("2083749436").getBody();
-        RiotMatchDetailsDTO riotMatchDetailsDTO3 = getMatchDetailsById("2082740427").getBody();
-        RiotMatchDetailsDTO riotMatchDetailsDTO4 = getMatchDetailsById("2082712887").getBody();
-        RiotMatchDetailsDTO riotMatchDetailsDTO5 = getMatchDetailsById("2082707928").getBody();
-
-        List<RiotMatchDetailsDTO> riotMatchDetailsDTOList = new ArrayList<>();
-        riotMatchDetailsDTOList.add(riotMatchDetailsDTO);
-        riotMatchDetailsDTOList.add(riotMatchDetailsDTO2);
-        riotMatchDetailsDTOList.add(riotMatchDetailsDTO3);
-        riotMatchDetailsDTOList.add(riotMatchDetailsDTO4);
-        riotMatchDetailsDTOList.add(riotMatchDetailsDTO5);
-
-        System.out.println(riotMatchDetailsDTO);
-
-        try {
-            leagueAccountService.mapAndSave(36858200L, riotMatchDetailsDTOList);
-            System.out.println("########################### Most played : " + leagueAccountService.mapMostPlayed(riotExtendedSummonerDTO.getRiotBasicSummonerDTO().getId(), riotMatchDetailsDTOList));
-            System.out.println("########################### Most played with : " + leagueAccountService.mapMostPlayedWith(riotExtendedSummonerDTO.getRiotBasicSummonerDTO().getId(), riotMatchDetailsDTOList));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         return new ResponseEntity<>(riotExtendedSummonerDTO, null, HttpStatus.OK);
     }
 

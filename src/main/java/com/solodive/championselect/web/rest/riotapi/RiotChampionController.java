@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/riotapi")
-public class ChampionController {
+public class RiotChampionController {
 
 
     @Autowired

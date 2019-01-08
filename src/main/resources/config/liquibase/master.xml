@@ -9,5 +9,18 @@
     <include file="config/liquibase/changelog/20181204173224_added_entity_Champion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20181204173224_added_entity_constraints_Champion.xml" relativeToChangelogFile="false"/>
+
+
+    <include file="config/liquibase/changelog/20181112142329_added_entity_SoloMember.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181112142330_added_entity_Quote.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181112142331_added_entity_LeagueAccount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181218180008_added_entity_Duos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181218180009_added_entity_MostPlayed.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181112142329_added_entity_constraints_SoloMember.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181112142330_added_entity_constraints_Quote.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181218180008_added_entity_constraints_Duos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181218180009_added_entity_constraints_MostPlayed.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -1,0 +1,129 @@
+enum ChampionResourceType {
+	HEALTH, MANA, ENERGY, BATTLEFURY
+}
+
+enum ChampionTagValue {
+	FIGHTER, TANK, MAGE, ASSASSIN
+}
+
+
+enum Server {
+    EUNE, EUW, NA
+}
+
+enum Tier {
+     IRON, BRONZE, SILVER, GOLD, PLATINUM, DIAMOND, MASTER, GRANDMASTER, CHALLENGER
+ }
+
+ enum Division {
+     I, II, III, IV, V, NA
+ }
+
+@service(serviceClass)
+entity ChampionTag {
+    tag ChampionTagValue required
+}
+
+@service(serviceClass)
+entity Champion {
+
+    internalVersion Long required,
+    lastModified Instant required,
+
+    riotId String,
+    riotKey String,
+    version String,
+    name String,
+    title String,
+    blurb String,
+
+    attack Long,
+    defence Long,
+    magic Long,
+    difficulty Long,
+
+    movementSpeed Double,
+    attackRange Double,
+
+    armorFlat Double,
+    armorPerLevel Double,
+
+    spellBlockFlat Double,
+    spellBlockPerLevel Double,
+
+    criticalFlat Double,
+    criticalPerLevel Double,
+
+    attackDamageFlat Double,
+    attackDamagePerLevel Double,
+
+    attackSpeedFlat Double,
+    attackSpeedPerLevel Double,
+
+    resourceFirstType ChampionResourceType,
+    resourceSecondType ChampionResourceType,
+
+    resourceFirstPoolFlat Double,
+    resourceFirstPoolPerLevel Double,
+
+    resourceFirstRegenerationFlat Double,
+    resourceFirstRegenerationPerLevel Double,
+
+    resourceSecondPoolFlat Double,
+    resourceSecondPoolPerLevel Double,
+
+    resourceSecondRegenerationFlat Double,
+    resourceSecondRegenerationPerLevel Double
+
+}
+
+
+entity SoloMember {
+    name String
+    surname String
+    description String
+    hometown String
+}
+
+entity Quote {
+    text String
+}
+
+entity LeagueAccount {
+    summonersId Long
+    name String
+    level Integer
+    server Server
+    division Division
+    tier Tier
+    lp Long
+	latest Boolean
+    lastUpdate Instant
+}
+
+entity Duos {
+ 	timesPlayed Long
+}
+
+entity MostPlayed {
+ 	timesPlayed Long
+}
+
+relationship ManyToMany {
+	Champion{tags} to ChampionTag{champions}
+}
+
+relationship OneToOne {
+    SoloMember{account} to LeagueAccount
+}
+
+relationship OneToMany {
+    SoloMember{quote} to Quote
+    SoloMember{member} to Duos{member}
+    SoloMember{duo} to Duos{duo}
+    SoloMember{player} to MostPlayed{member}
+    Champion{champion} to MostPlayed{champion}
+}
+
+service SoloMember, Quote, LeagueAccount, Champion, Duos, MostPlayed with serviceClass
+paginate SoloMember, Quote, LeagueAccount, Champion with infinite-scroll

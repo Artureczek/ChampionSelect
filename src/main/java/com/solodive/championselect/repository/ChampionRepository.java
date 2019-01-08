@@ -27,4 +27,6 @@ public interface ChampionRepository extends JpaRepository<Champion, Long> {
     @Query("select champion from Champion champion left join fetch champion.tags where champion.id =:id")
     Optional<Champion> findOneWithEagerRelationships(@Param("id") Long id);
 
+    Optional<Champion> findFirstByRiotKey(Long riotKey);
+
 }
