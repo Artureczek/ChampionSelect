@@ -1,5 +1,6 @@
 package com.solodive.championselect.service;
 
+import com.solodive.championselect.domain.Duos;
 import com.solodive.championselect.domain.MostPlayed;
 import com.solodive.championselect.repository.MostPlayedRepository;
 import org.slf4j.Logger;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +35,8 @@ public class MostPlayedService {
      * @return the persisted entity
      */
     public MostPlayed save(MostPlayed mostPlayed) {
-        log.debug("Request to save MostPlayed : {}", mostPlayed);        return mostPlayedRepository.save(mostPlayed);
+        log.debug("Request to save MostPlayed : {}", mostPlayed);
+        return mostPlayedRepository.save(mostPlayed);
     }
 
     /**
@@ -68,5 +71,16 @@ public class MostPlayedService {
     public void delete(Long id) {
         log.debug("Request to delete MostPlayed : {}", id);
         mostPlayedRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void removeAllByAccount(Long account) {
+        log.debug("Request to remove MostPlayed for account : {}", account);
+        Optional<List<MostPlayed>> mostPlayed = mostPlayedRepository.findAllByAccount(account);
+        if (mostPlayed.isPresent()) {
+            for (MostPlayed record : mostPlayed.get()) {
+                delete(record.getId());
+            }
+        } else log.debug("No MostPlayed found for given account no : {}", account);
     }
 }

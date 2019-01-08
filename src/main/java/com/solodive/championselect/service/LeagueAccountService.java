@@ -84,6 +84,12 @@ public class LeagueAccountService {
         return leagueAccountRepository.findById(id);
     }
 
+    @Transactional(readOnly = true)
+    public Optional<LeagueAccount> findOneBySummonersId(Long id) {
+        log.debug("Request to get LeagueAccount : {}", id);
+        return leagueAccountRepository.findOneBySummonersId(id);
+    }
+
     /**
      * Delete the leagueAccount by id.
      *
@@ -166,25 +172,36 @@ public class LeagueAccountService {
     }
 
     public LeagueAccount mapAndSave(RiotExtendedSummonerDTO extendedSummoner) {
-        LeagueAccount leagueAccount = mapRiotDTOToLeagueAccount(extendedSummoner);
-        log.debug("Request to save LeagueAccount : {}", leagueAccount);
-        return leagueAccountRepository.save(leagueAccount);
+        log.debug("Request to save account : {}", extendedSummoner.getRiotBasicSummonerDTO());
+        Optional<LeagueAccount> leagueAccount = findOneBySummonersId(extendedSummoner.getRiotBasicSummonerDTO().getId());
+        if (leagueAccount.isPresent()) {
+            log.debug("Is present");
+        } else {
+            LeagueAccount newAccount = mapRiotDTOToLeagueAccount(extendedSummoner);
+            leagueAccountRepository.save(newAccount);
+        }
+        return null;
     }
 
-    public List<MostPlayed> mapAndSave(Long summonerId, List<RiotMatchDetailsDTO> riotMatchDetailsDTOS) {
-        List<MostPlayed> mostPlayedList = new ArrayList<>();
+    public void mapAndSave(Long summonerId, List<RiotMatchDetailsDTO> riotMatchDetailsDTOS) {
+        Optional<SoloMember> soloMemberOptional = soloMemberService.findOneByAccount(summonerId);
+        if (soloMemberOptional.isPresent()) {
+            SoloMember soloMember = soloMemberOptional.get();
+            log.debug("Found member {}", soloMember);
+            mostPlayedService.removeAllByAccount(summonerId);
+            duosService.removeAllByAccount(summonerId);
 
-        if (soloMemberService.findOne(summonerId).isPresent()) {
-            SoloMember soloMember = soloMemberService.findOne(summonerId).get();
             for (Map.Entry<Long, Integer> entry : mapMostPlayedWith(summonerId, riotMatchDetailsDTOS).entrySet()) {
                 //if it is not a solo member - omit this entry
-                if (soloMemberService.findOne(entry.getKey()).isPresent()) {
-                    Duos mostPlayedWith = new Duos();
-                    mostPlayedWith.setMember(soloMember);
-                    mostPlayedWith.setDuo(soloMemberService.findOne(entry.getKey()).get());
-                    mostPlayedWith.setTimesPlayed(Long.valueOf(entry.getValue()));
+                if (findOneBySummonersId(entry.getKey()).isPresent()) {
+                    if (soloMemberService.findOneByAccount(entry.getKey()).isPresent()) {
+                        Duos mostPlayedWith = new Duos();
+                        mostPlayedWith.setMember(soloMember);
+                        mostPlayedWith.setDuo(soloMemberService.findOneByAccount(entry.getKey()).get());
+                        mostPlayedWith.setTimesPlayed(Long.valueOf(entry.getValue()));
 
-                    duosService.save(mostPlayedWith);
+                        duosService.save(mostPlayedWith);
+                    }
                 }
             }
 
@@ -201,7 +218,6 @@ public class LeagueAccountService {
                 }
             }
         }
-        return mostPlayedList;
     }
 
 }

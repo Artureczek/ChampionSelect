@@ -1,5 +1,6 @@
 package com.solodive.championselect.service;
 
+import com.solodive.championselect.domain.LeagueAccount;
 import com.solodive.championselect.domain.SoloMember;
 import com.solodive.championselect.repository.SoloMemberRepository;
 import org.slf4j.Logger;
@@ -60,6 +61,12 @@ public class SoloMemberService {
     public Optional<SoloMember> findOne(Long id) {
         log.debug("Request to get SoloMember : {}", id);
         return soloMemberRepository.findById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<SoloMember> findOneByAccount(Long id) {
+        log.debug("Request to get SoloMember : {}", id);
+        return soloMemberRepository.findOneByAccount(id);
     }
 
 

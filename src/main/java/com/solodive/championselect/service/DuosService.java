@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +34,8 @@ public class DuosService {
      * @return the persisted entity
      */
     public Duos save(Duos duos) {
-        log.debug("Request to save Duos : {}", duos);        return duosRepository.save(duos);
+        log.debug("Request to save Duos : {}", duos);
+        return duosRepository.save(duos);
     }
 
     /**
@@ -58,6 +60,17 @@ public class DuosService {
     public Optional<Duos> findOne(Long id) {
         log.debug("Request to get Duos : {}", id);
         return duosRepository.findById(id);
+    }
+
+    @Transactional
+    public void removeAllByAccount(Long account) {
+        log.debug("Request to remove Duos for account : {}", account);
+        Optional<List<Duos>> duos = duosRepository.findAllByAccount(account);
+        if (duos.isPresent()) {
+            for (Duos record : duos.get()) {
+                delete(record.getId());
+            }
+        } else log.debug("No Duos found for given account no : {}", account);
     }
 
     /**
