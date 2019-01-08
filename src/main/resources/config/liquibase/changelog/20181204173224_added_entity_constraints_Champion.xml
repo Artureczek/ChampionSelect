@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Champion.
+    -->
+    <changeSet id="20181204173224-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="champions_id"
+                                 baseTableName="champion_tags"
+                                 constraintName="fk_champion_tags_champions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="champion"/>
+        <addForeignKeyConstraint baseColumnNames="tags_id"
+                                 baseTableName="champion_tags"
+                                 constraintName="fk_champion_tags_tags_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="champion_tag"/>
+        
+    </changeSet>
+</databaseChangeLog>

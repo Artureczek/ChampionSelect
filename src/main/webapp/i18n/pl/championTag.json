@@ -1,0 +1,23 @@
+
+{
+    "championSelectApp": {
+        "championTag" : {
+            "home": {
+                "title": "Champion Tag",
+                "createLabel": "Dodaj Champion Tag",
+                "createOrEditLabel": "Dodaj lub edytuj: Champion Tag"
+            },
+            "created": "Utworzono nowy obiekt typu Champion Tag z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Champion Tag z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Champion Tag z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Champion Tag {{ id }}?"
+            },
+            "detail": {
+                "title": "Champion Tag"
+            },
+            "tag": "Tag",
+            "champions": "Champions"
+        }
+    }
+}

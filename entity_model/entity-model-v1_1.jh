@@ -1,0 +1,69 @@
+enum ChampionResourceType {
+	HEALTH, MANA, ENERGY, BATTLEFURY
+}
+
+enum ChampionTagValue {
+	FIGHTER, TANK, MAGE, ASSASSIN
+}
+
+@service(serviceClass)
+entity ChampionTag {
+    tag ChampionTagValue required
+}
+
+@service(serviceClass)
+entity Champion {
+
+    internalVersion Long required,
+    lastModified Instant required,
+
+    riotId String,
+    riotKey String,
+    version String,
+    name String,
+    title String,
+    blurb String,
+
+    attack Long,
+    defence Long,
+    magic Long,
+    difficulty Long,
+
+    movementSpeed Double,
+    attackRange Double,
+
+    armorFlat Double,
+    armorPerLevel Double,
+
+    spellBlockFlat Double,
+    spellBlockPerLevel Double,
+
+    criticalFlat Double,
+    criticalPerLevel Double,
+
+    attackDamageFlat Double,
+    attackDamagePerLevel Double,
+
+    attackSpeedFlat Double,
+    attackSpeedPerLevel Double,
+
+    resourceFirstType ChampionResourceType,
+    resourceSecondType ChampionResourceType,
+
+    resourceFirstPoolFlat Double,
+    resourceFirstPoolPerLevel Double,
+
+    resourceFirstRegenerationFlat Double,
+    resourceFirstRegenerationPerLevel Double,
+
+    resourceSecondPoolFlat Double,
+    resourceSecondPoolPerLevel Double,
+
+    resourceSecondRegenerationFlat Double,
+    resourceSecondRegenerationPerLevel Double
+
+}
+
+relationship ManyToMany {
+	Champion{tags} to ChampionTag{champions}
+}

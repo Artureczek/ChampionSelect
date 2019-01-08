@@ -1,14 +1,14 @@
 /* tslint:disable max-line-length */
 import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { ChampionService } from 'app/entities/champion/champion.service';
-import { Champion } from 'app/shared/model/champion.model';
+import { ChampionTagService } from 'app/entities/champion-tag/champion-tag.service';
+import { ChampionTag } from 'app/shared/model/champion-tag.model';
 import { SERVER_API_URL } from 'app/app.constants';
 
 describe('Service Tests', () => {
-    describe('Champion Service', () => {
+    describe('ChampionTag Service', () => {
         let injector: TestBed;
-        let service: ChampionService;
+        let service: ChampionTagService;
         let httpMock: HttpTestingController;
 
         beforeEach(() => {
@@ -16,7 +16,7 @@ describe('Service Tests', () => {
                 imports: [HttpClientTestingModule]
             });
             injector = getTestBed();
-            service = injector.get(ChampionService);
+            service = injector.get(ChampionTagService);
             httpMock = injector.get(HttpTestingController);
         });
 
@@ -26,11 +26,11 @@ describe('Service Tests', () => {
 
                 const req = httpMock.expectOne({ method: 'GET' });
 
-                const resourceUrl = SERVER_API_URL + 'api/champions';
+                const resourceUrl = SERVER_API_URL + 'api/champion-tags';
                 expect(req.request.url).toEqual(resourceUrl + '/' + 123);
             });
 
-            it('should return a Champion', () => {
+            it('should return a ChampionTag', () => {
                 service.find(123).subscribe(received => {
                     expect(received.body.id).toEqual(123);
                 });
@@ -39,13 +39,13 @@ describe('Service Tests', () => {
                 req.flush({ id: 123 });
             });
 
-            it('should return a list of Champion', () => {
+            it('should return a list of ChampionTag', () => {
                 service.query(null).subscribe(received => {
                     expect(received.body[0].id).toEqual(123);
                 });
 
                 const req = httpMock.expectOne({ method: 'GET' });
-                req.flush([new Champion(123)]);
+                req.flush([new ChampionTag(123)]);
             });
 
             it('should propagate not found response', () => {

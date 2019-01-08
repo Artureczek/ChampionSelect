@@ -13,26 +13,88 @@
     <div class="table-responsive" *ngIf="champions">
         <table class="table table-striped">
             <thead>
-            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="riotId"><span jhiTranslate="championSelectApp.champion.riotId">Riot Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="riotKey"><span jhiTranslate="championSelectApp.champion.riotKey">Riot Key</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="version"><span jhiTranslate="championSelectApp.champion.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="name"><span jhiTranslate="championSelectApp.champion.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="title"><span jhiTranslate="championSelectApp.champion.title">Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="blurb"><span jhiTranslate="championSelectApp.champion.blurb">Blurb</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.internalVersion">Internal Version</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.lastModified">Last Modified</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.riotId">Riot Id</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.riotKey">Riot Key</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.version">Version</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.name">Name</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.title">Title</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.blurb">Blurb</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.attack">Attack</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.defence">Defence</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.magic">Magic</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.difficulty">Difficulty</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.movementSpeed">Movement Speed</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.attackRange">Attack Range</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.armorFlat">Armor Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.armorPerLevel">Armor Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.spellBlockFlat">Spell Block Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.spellBlockPerLevel">Spell Block Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.criticalFlat">Critical Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.criticalPerLevel">Critical Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.attackDamageFlat">Attack Damage Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.attackDamagePerLevel">Attack Damage Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.attackSpeedFlat">Attack Speed Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.attackSpeedPerLevel">Attack Speed Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceFirstType">Resource First Type</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceSecondType">Resource Second Type</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceFirstPoolFlat">Resource First Pool Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceFirstPoolPerLevel">Resource First Pool Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceFirstRegenerationFlat">Resource First Regeneration Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceFirstRegenerationPerLevel">Resource First Regeneration Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceSecondPoolFlat">Resource Second Pool Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceSecondPoolPerLevel">Resource Second Pool Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceSecondRegenerationFlat">Resource Second Regeneration Flat</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.resourceSecondRegenerationPerLevel">Resource Second Regeneration Per Level</span></th>
+            <th><span jhiTranslate="championSelectApp.champion.tags">Tags</span></th>
             <th></th>
             </tr>
             </thead>
-            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tbody>
             <tr *ngFor="let champion of champions ;trackBy: trackId">
                 <td><a [routerLink]="['/champion', champion.id, 'view' ]">{{champion.id}}</a></td>
+                <td>{{champion.internalVersion}}</td>
+                <td>{{champion.lastModified | date:'medium'}}</td>
                 <td>{{champion.riotId}}</td>
                 <td>{{champion.riotKey}}</td>
                 <td>{{champion.version}}</td>
                 <td>{{champion.name}}</td>
                 <td>{{champion.title}}</td>
                 <td>{{champion.blurb}}</td>
+                <td>{{champion.attack}}</td>
+                <td>{{champion.defence}}</td>
+                <td>{{champion.magic}}</td>
+                <td>{{champion.difficulty}}</td>
+                <td>{{champion.movementSpeed}}</td>
+                <td>{{champion.attackRange}}</td>
+                <td>{{champion.armorFlat}}</td>
+                <td>{{champion.armorPerLevel}}</td>
+                <td>{{champion.spellBlockFlat}}</td>
+                <td>{{champion.spellBlockPerLevel}}</td>
+                <td>{{champion.criticalFlat}}</td>
+                <td>{{champion.criticalPerLevel}}</td>
+                <td>{{champion.attackDamageFlat}}</td>
+                <td>{{champion.attackDamagePerLevel}}</td>
+                <td>{{champion.attackSpeedFlat}}</td>
+                <td>{{champion.attackSpeedPerLevel}}</td>
+                <td jhiTranslate="{{'championSelectApp.ChampionResourceType.' + champion.resourceFirstType}}">{{champion.resourceFirstType}}</td>
+                <td jhiTranslate="{{'championSelectApp.ChampionResourceType.' + champion.resourceSecondType}}">{{champion.resourceSecondType}}</td>
+                <td>{{champion.resourceFirstPoolFlat}}</td>
+                <td>{{champion.resourceFirstPoolPerLevel}}</td>
+                <td>{{champion.resourceFirstRegenerationFlat}}</td>
+                <td>{{champion.resourceFirstRegenerationPerLevel}}</td>
+                <td>{{champion.resourceSecondPoolFlat}}</td>
+                <td>{{champion.resourceSecondPoolPerLevel}}</td>
+                <td>{{champion.resourceSecondRegenerationFlat}}</td>
+                <td>{{champion.resourceSecondRegenerationPerLevel}}</td>
+                <td>
+                    <span *ngFor="let tags of champion.tags; let last = last">
+                            <a class="form-control-static" [routerLink]="['../champion-tag', tags?.id, 'view' ]">{{tags.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

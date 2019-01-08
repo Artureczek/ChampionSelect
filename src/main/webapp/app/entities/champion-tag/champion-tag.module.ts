@@ -2,14 +2,13 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { ChampionSelectSharedModule } from 'app/shared';
-import { ChampionComponent, ChampionDetailComponent, championRoute } from './';
 
-const ENTITY_STATES = [...championRoute];
+const ENTITY_STATES = [];
 
 @NgModule({
     imports: [ChampionSelectSharedModule, RouterModule.forChild(ENTITY_STATES)],
-    declarations: [ChampionComponent, ChampionDetailComponent],
-    entryComponents: [ChampionComponent],
+    declarations: [],
+    entryComponents: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ChampionSelectChampionModule {}
+export class ChampionSelectChampionTagModule {}
