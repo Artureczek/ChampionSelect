@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="duos">
+            <h2><span jhiTranslate="championSelectApp.duos.detail.title">Duos</span> {{duos.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="championSelectApp.duos.timesPlayed">Times Played</span></dt>
+                <dd>
+                    <span>{{duos.timesPlayed}}</span>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.duos.member">Member</span></dt>
+                <dd>
+                    <div *ngIf="duos.member">
+                        <a [routerLink]="['/solo-member', duos.member?.id, 'view']">{{duos.member?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="championSelectApp.duos.duo">Duo</span></dt>
+                <dd>
+                    <div *ngIf="duos.duo">
+                        <a [routerLink]="['/solo-member', duos.duo?.id, 'view']">{{duos.duo?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/duos', duos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+
+{
+    "championSelectApp": {
+        "mostPlayed" : {
+            "home": {
+                "title": "Most Played",
+                "createLabel": "Dodaj Most Played",
+                "createOrEditLabel": "Dodaj lub edytuj: Most Played"
+            },
+            "created": "Utworzono nowy obiekt typu Most Played z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Most Played z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Most Played z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Most Played {{ id }}?"
+            },
+            "detail": {
+                "title": "Most Played"
+            },
+            "timesPlayed": "Times Played",
+            "member": "Member",
+            "champion": "Champion"
+        }
+    }
+}

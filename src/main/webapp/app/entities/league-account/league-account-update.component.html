@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-league-account-heading" jhiTranslate="championSelectApp.leagueAccount.home.createOrEditLabel">Create or edit a League Account</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!leagueAccount.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="leagueAccount.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.summonersId" for="field_summonersId">Summoners Id</label>
+                    <input type="number" class="form-control" name="summonersId" id="field_summonersId"
+                        [(ngModel)]="leagueAccount.summonersId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="leagueAccount.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.level" for="field_level">Level</label>
+                    <input type="number" class="form-control" name="level" id="field_level"
+                        [(ngModel)]="leagueAccount.level" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.server" for="field_server">Server</label>
+                    <select class="form-control" name="server" [(ngModel)]="leagueAccount.server" id="field_server" >
+                        <option value="EUNE">{{'championSelectApp.Server.EUNE' | translate}}</option>
+                        <option value="EUW">{{'championSelectApp.Server.EUW' | translate}}</option>
+                        <option value="NA">{{'championSelectApp.Server.NA' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.division" for="field_division">Division</label>
+                    <select class="form-control" name="division" [(ngModel)]="leagueAccount.division" id="field_division" >
+                        <option value="IRON">{{'championSelectApp.Division.IRON' | translate}}</option>
+                        <option value="BRONZE">{{'championSelectApp.Division.BRONZE' | translate}}</option>
+                        <option value="SILVER">{{'championSelectApp.Division.SILVER' | translate}}</option>
+                        <option value="GOLD">{{'championSelectApp.Division.GOLD' | translate}}</option>
+                        <option value="PLATINUM">{{'championSelectApp.Division.PLATINUM' | translate}}</option>
+                        <option value="DIAMOND">{{'championSelectApp.Division.DIAMOND' | translate}}</option>
+                        <option value="MASTER">{{'championSelectApp.Division.MASTER' | translate}}</option>
+                        <option value="GRANDMASTER">{{'championSelectApp.Division.GRANDMASTER' | translate}}</option>
+                        <option value="CHALLENGER">{{'championSelectApp.Division.CHALLENGER' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.tier" for="field_tier">Tier</label>
+                    <select class="form-control" name="tier" [(ngModel)]="leagueAccount.tier" id="field_tier" >
+                        <option value="I">{{'championSelectApp.Tier.I' | translate}}</option>
+                        <option value="II">{{'championSelectApp.Tier.II' | translate}}</option>
+                        <option value="III">{{'championSelectApp.Tier.III' | translate}}</option>
+                        <option value="IV">{{'championSelectApp.Tier.IV' | translate}}</option>
+                        <option value="V">{{'championSelectApp.Tier.V' | translate}}</option>
+                        <option value="NA">{{'championSelectApp.Tier.NA' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.lp" for="field_lp">Lp</label>
+                    <input type="number" class="form-control" name="lp" id="field_lp"
+                        [(ngModel)]="leagueAccount.lp" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.latest" for="field_latest">Latest</label>
+                    <input type="checkbox" class="form-control" name="latest" id="field_latest"
+                        [(ngModel)]="leagueAccount.latest" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="championSelectApp.leagueAccount.lastUpdate" for="field_lastUpdate">Last Update</label>
+                    <div class="d-flex">
+                        <input id="field_lastUpdate" type="datetime-local" class="form-control" name="lastUpdate" [(ngModel)]="lastUpdate"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

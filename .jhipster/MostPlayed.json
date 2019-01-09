@@ -1,0 +1,32 @@
+{
+    "name": "MostPlayed",
+    "fields": [
+        {
+            "fieldName": "timesPlayed",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "member",
+            "otherEntityName": "soloMember",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "champion",
+            "otherEntityName": "champion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181218180009",
+    "entityTableName": "most_played",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

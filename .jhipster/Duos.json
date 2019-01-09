@@ -1,0 +1,32 @@
+{
+    "name": "Duos",
+    "fields": [
+        {
+            "fieldName": "timesPlayed",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "member",
+            "otherEntityName": "soloMember",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "duo",
+            "otherEntityName": "soloMember",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181218180008",
+    "entityTableName": "duos",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

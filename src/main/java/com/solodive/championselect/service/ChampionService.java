@@ -67,7 +67,7 @@ public class ChampionService {
     public Page<Champion> findAllWithEagerRelationships(Pageable pageable) {
         return championRepository.findAllWithEagerRelationships(pageable);
     }
-    
+
 
     /**
      * Get one champion by id.
@@ -146,5 +146,11 @@ public class ChampionService {
                 );
         }
         return champion;
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<Champion> findOneByRiotKey(Long id) {
+        log.debug("Request to get Champion : {}", id);
+        return championRepository.findFirstByRiotKey(id);
     }
 }

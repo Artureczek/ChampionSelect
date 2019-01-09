@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity MostPlayed.
+    -->
+    <changeSet id="20181218180009-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="member_id"
+                                 baseTableName="most_played"
+                                 constraintName="fk_most_played_member_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="solo_member"/>
+
+        <addForeignKeyConstraint baseColumnNames="champion_id"
+                                 baseTableName="most_played"
+                                 constraintName="fk_most_played_champion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="champion"/>
+
+    </changeSet>
+</databaseChangeLog>

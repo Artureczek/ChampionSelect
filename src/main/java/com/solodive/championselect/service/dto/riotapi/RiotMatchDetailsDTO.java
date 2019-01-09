@@ -1,5 +1,7 @@
 package com.solodive.championselect.service.dto.riotapi;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,9 @@ public class RiotMatchDetailsDTO {
     private String gameVersion;
     private String gameMode;
     private String gameType;
+    @JsonProperty("participants")
     private List<RiotParticipantDTO> riotParticipantDTOS = new ArrayList<>();
+    @JsonProperty("participantIdentities")
     private List<RiotParticipantIdentityDTO> participantIdentities = new ArrayList<>();
 
 

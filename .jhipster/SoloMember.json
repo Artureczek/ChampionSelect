@@ -1,0 +1,64 @@
+{
+    "name": "SoloMember",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hometown",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "account",
+            "otherEntityName": "leagueAccount",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "soloMember"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "quote",
+            "otherEntityName": "quote",
+            "otherEntityRelationshipName": "soloMember"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "member",
+            "otherEntityName": "duos",
+            "otherEntityRelationshipName": "member"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "duo",
+            "otherEntityName": "duos",
+            "otherEntityRelationshipName": "duo"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "player",
+            "otherEntityName": "mostPlayed",
+            "otherEntityRelationshipName": "member"
+        }
+    ],
+    "changelogDate": "20181112142329",
+    "entityTableName": "solo_member",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

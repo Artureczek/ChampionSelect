@@ -1,8 +1,11 @@
 package com.solodive.championselect.service.dto.riotapi;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class RiotParticipantIdentityDTO {
 
     private Long participantId;
+    @JsonProperty("player")
     private RiotPlayerDTO riotPlayerDTO;
 
     public Long getParticipantId() {
